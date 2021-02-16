@@ -1,5 +1,6 @@
 /*programing for sort string in the text "Oneging"
- * MakeFile:
+ * MakeFile: None
+ * Тест пузырька и Обратного пузырька пройден без ошибок
  * */
 
 #include <time.h>
@@ -22,7 +23,7 @@ struct myarr {
 
 FILE* open_file(); // открывает файл
 struct myarr make_array(FILE*); // распределяет текст в двумерный массив чаров
-char checking_for_a_word(char);
+char checking_for_a_word(char); // смотрит чтобы в массив поподали только слова
 void print_array(struct myarr); // печатает итоговый массив
 void print_array_on_file(struct myarr); // печатает отсорченый массив в файл
 struct mystr* size_up_array(struct mystr*, const long); // изменяет длину массива указателей на строки на size
@@ -31,11 +32,11 @@ struct myarr bubble_sort(struct myarr); // возвращает отсортир
 struct myarr bubble_sort_revers(struct myarr);// сортирует с конца ищет рифмы
 char comp(struct mystr, struct mystr);// компонатор для пузырьковой сортировки
 void _swap(struct mystr*, struct mystr*);//свап который не работает
-char comp_reverse(struct mystr, struct mystr);
-int comp_qsort(const void*, const void*);
-int comp_qsort_reverse(const void*, const void*);
-void unit_test_bubble_sort(struct myarr);
-void unit_test_reverse_bubble_sort(struct myarr);
+char comp_reverse(struct mystr, struct mystr); //компоратор для обратного пузырька
+int comp_qsort(const void*, const void*); // компоратор для квик сорта
+int comp_qsort_reverse(const void*, const void*); // компоратор для обратного квик сорта
+void unit_test_bubble_sort(struct myarr); //тест пузырька
+void unit_test_reverse_bubble_sort(struct myarr); // тест обратного пузырька
 
 
 int main() {
@@ -84,10 +85,12 @@ int main() {
     }
     //print_array(arr);
     print_array_on_file(arr);
+    
     printf("END OF PROGRAM\n\n\nWorking Time of the Program:"
            " %f sec\nNumber Tacks: %ld\n",
            (float)working_hours_of_the_program / CLOCKS_PER_SEC,
            working_hours_of_the_program);
+    
     fclose(file);
     return 0;
 }
