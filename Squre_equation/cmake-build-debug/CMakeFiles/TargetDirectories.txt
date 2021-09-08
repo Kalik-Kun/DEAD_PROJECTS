@@ -1,0 +1,3 @@
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/cmake-build-debug/CMakeFiles/Squre_equation.dir

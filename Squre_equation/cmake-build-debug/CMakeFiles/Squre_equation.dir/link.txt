@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Squre_equation.dir/main.cpp.o CMakeFiles/Squre_equation.dir/equation.cpp.o -o Squre_equation 

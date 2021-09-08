@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.h
+iostream
+-
+math.h
+-
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/main.cpp
+equation.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.h
+cstring
+-
+
