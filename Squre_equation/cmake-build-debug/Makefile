@@ -129,29 +129,29 @@ Squre_equation/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Squre_equation.dir/build.make CMakeFiles/Squre_equation.dir/build
 .PHONY : Squre_equation/fast
 
-equation.o: equation.cpp.o
-.PHONY : equation.o
+func.o: func.cpp.o
+.PHONY : func.o
 
 # target to build an object file
-equation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Squre_equation.dir/build.make CMakeFiles/Squre_equation.dir/equation.cpp.o
-.PHONY : equation.cpp.o
+func.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Squre_equation.dir/build.make CMakeFiles/Squre_equation.dir/func.cpp.o
+.PHONY : func.cpp.o
 
-equation.i: equation.cpp.i
-.PHONY : equation.i
+func.i: func.cpp.i
+.PHONY : func.i
 
 # target to preprocess a source file
-equation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Squre_equation.dir/build.make CMakeFiles/Squre_equation.dir/equation.cpp.i
-.PHONY : equation.cpp.i
+func.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Squre_equation.dir/build.make CMakeFiles/Squre_equation.dir/func.cpp.i
+.PHONY : func.cpp.i
 
-equation.s: equation.cpp.s
-.PHONY : equation.s
+func.s: func.cpp.s
+.PHONY : func.s
 
 # target to generate assembly for a file
-equation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Squre_equation.dir/build.make CMakeFiles/Squre_equation.dir/equation.cpp.s
-.PHONY : equation.cpp.s
+func.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Squre_equation.dir/build.make CMakeFiles/Squre_equation.dir/func.cpp.s
+.PHONY : func.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -186,9 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Squre_equation"
-	@echo "... equation.o"
-	@echo "... equation.i"
-	@echo "... equation.s"
+	@echo "... func.o"
+	@echo "... func.i"
+	@echo "... func.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

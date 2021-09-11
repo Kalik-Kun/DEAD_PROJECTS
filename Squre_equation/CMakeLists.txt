@@ -3,4 +3,4 @@ project(Squre_equation)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Squre_equation main.cpp equation.cpp equation.h)
+add_executable(Squre_equation main.cpp func.cpp func.h)

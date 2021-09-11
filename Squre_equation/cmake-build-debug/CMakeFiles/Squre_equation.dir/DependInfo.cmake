@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.cpp" "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/cmake-build-debug/CMakeFiles/Squre_equation.dir/equation.cpp.o"
+  "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/func.cpp" "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/cmake-build-debug/CMakeFiles/Squre_equation.dir/func.cpp.o"
   "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/main.cpp" "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/cmake-build-debug/CMakeFiles/Squre_equation.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

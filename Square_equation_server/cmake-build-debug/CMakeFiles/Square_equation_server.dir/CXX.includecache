@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Square_equation_server/main.cpp
+iostream
+-
+unistd.h
+-
+string.h
+-
+

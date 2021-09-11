@@ -82,10 +82,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.cpp">
+		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/func.cpp">
 			<Option target="Squre_equation"/>
 		</Unit>
-		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.h">
+		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/func.h">
 			<Option target="Squre_equation"/>
 		</Unit>
 		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/main.cpp">

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Squre_equation.dir/equation.cpp.o"
+  "CMakeFiles/Squre_equation.dir/func.cpp.o"
   "CMakeFiles/Squre_equation.dir/main.cpp.o"
   "Squre_equation"
   "Squre_equation.pdb"

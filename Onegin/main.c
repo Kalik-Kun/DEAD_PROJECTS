@@ -12,37 +12,41 @@
 const char *name_file = "Onegin.txt";
 const char *output_name = "output_file";
 
+// одна строка
 struct mystr {
     char *str;
-    long len;
-};  // одна строка
+    long len = 0;
+};
+
+// массив указателей на строки
 struct myarr {
     struct mystr* arr;
-    long size;
-}; // массив указателей на строки
+    long size = 0;
+}; 
 
-FILE* open_file(); // открывает файл
-struct myarr make_array(FILE*); // распределяет текст в двумерный массив чаров
-char checking_for_a_word(char); // смотрит чтобы в массив поподали только слова
-void print_array(struct myarr); // печатает итоговый массив
-void print_array_on_file(struct myarr); // печатает отсорченый массив в файл
-struct mystr* size_up_array(struct mystr*, const long); // изменяет длину массива указателей на строки на size
-char* size_up_len_string(char*, const long); // изменяет длину строки на size
-struct myarr bubble_sort(struct myarr); // возвращает отсортированый пузырком массив
-struct myarr bubble_sort_revers(struct myarr);// сортирует с конца ищет рифмы
-char comp(struct mystr, struct mystr);// компонатор для пузырьковой сортировки
-void _swap(struct mystr*, struct mystr*);//свап который не работает
-char comp_reverse(struct mystr, struct mystr); //компоратор для обратного пузырька
-int comp_qsort(const void*, const void*); // компоратор для квик сорта
-int comp_qsort_reverse(const void*, const void*); // компоратор для обратного квик сорта
-void unit_test_bubble_sort(struct myarr); //тест пузырька
-void unit_test_reverse_bubble_sort(struct myarr); // тест обратного пузырька
+FILE*           open_file                       ();                             // открывает файл
+struct  myarr   make_array                      (FILE*);                        // распределяет текст в двумерный массив чаров
+char            checking_for_a_word             (char);                         // смотрит чтобы в массив поподали только слова
+void            print_array                     (struct myarr);                 // печатает итоговый массив
+void            print_array_on_file             (struct myarr);                 // печатает отсорченый массив в файл
+struct  mystr*  size_up_array                   (struct mystr*, const long);    // изменяет длину массива указателей на строки на size
+char*           size_up_len_string              (char*, const long);            // изменяет длину строки на size
+struct  myarr   bubble_sort                     (struct myarr);                 // возвращает отсортированый пузырком массив
+struct  myarr   bubble_sort_revers              (struct myarr);                 // сортирует с конца ищет рифмы
+char            comp                            (struct mystr, struct mystr);   // компонатор для пузырьковой сортировки
+void            _swap                           (struct mystr*, struct mystr*); // свап который не работает
+char            comp_reverse                    (struct mystr, struct mystr);   // компоратор для обратного пузырька
+int             comp_qsort                      (const void*, const void*);     // компоратор для квик сорта
+int             comp_qsort_reverse              (const void*, const void*);     // компоратор для обратного квик сорта
+void            unit_test_bubble_sort            (struct myarr);                // тест пузырька
+void            unit_test_reverse_bubble_sort   (struct myarr);                 // тест обратного пузырька
 
 
 int main() {
-    FILE *file = open_file();
-    struct myarr arr = make_array(file);
+    
     int user_input_for_mode_setings;
+    FILE *file                        = open_file();
+    struct myarr arr                  = make_array(file);
     long working_hours_of_the_program = clock();
 
     printf("Input Your's sort:\n1 - bubble sort"
@@ -83,6 +87,7 @@ int main() {
                    "plese restard\n\n");
             break;
     }
+    
     //print_array(arr);
     print_array_on_file(arr);
     
@@ -99,23 +104,19 @@ int main() {
 
 FILE* open_file() {
 
-    FILE *fp = fopen(name_file, "r");
+    FILE  *fp = fopen(name_file, "r");
     return fp;
 
 }
 
 struct myarr make_array(FILE *file) {
 
-    char error_point = 0;
-
-    char *arr = NULL;
-    struct mystr *values = NULL;
-
-    long string_count = 0;
-    long len = 0;
-
-    char symb;
-
+    char          symb;
+    char          error_point  = 0;
+    long          string_count = 0;
+    long          len          = 0;
+    char         *arr          = NULL;
+    struct mystr *values       = NULL;    
 
     while (fscanf(file, "%c", &symb) != -1) {
 
@@ -137,7 +138,7 @@ struct myarr make_array(FILE *file) {
 
             continue;
         }
-        if(checking_for_a_word(symb)) {
+        if (checking_for_a_word(symb)) {
             len++;
             arr = size_up_len_string(arr, len);
             if (arr == NULL) {

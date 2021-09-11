@@ -79,29 +79,29 @@ CMakeFiles/Squre_equation.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Squre_equation.dir/main.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/main.cpp -o CMakeFiles/Squre_equation.dir/main.cpp.s
 
-CMakeFiles/Squre_equation.dir/equation.cpp.o: CMakeFiles/Squre_equation.dir/flags.make
-CMakeFiles/Squre_equation.dir/equation.cpp.o: ../equation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Squre_equation.dir/equation.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Squre_equation.dir/equation.cpp.o -c /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.cpp
+CMakeFiles/Squre_equation.dir/func.cpp.o: CMakeFiles/Squre_equation.dir/flags.make
+CMakeFiles/Squre_equation.dir/func.cpp.o: ../func.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Squre_equation.dir/func.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Squre_equation.dir/func.cpp.o -c /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/func.cpp
 
-CMakeFiles/Squre_equation.dir/equation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Squre_equation.dir/equation.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.cpp > CMakeFiles/Squre_equation.dir/equation.cpp.i
+CMakeFiles/Squre_equation.dir/func.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Squre_equation.dir/func.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/func.cpp > CMakeFiles/Squre_equation.dir/func.cpp.i
 
-CMakeFiles/Squre_equation.dir/equation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Squre_equation.dir/equation.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.cpp -o CMakeFiles/Squre_equation.dir/equation.cpp.s
+CMakeFiles/Squre_equation.dir/func.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Squre_equation.dir/func.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/func.cpp -o CMakeFiles/Squre_equation.dir/func.cpp.s
 
 # Object files for target Squre_equation
 Squre_equation_OBJECTS = \
 "CMakeFiles/Squre_equation.dir/main.cpp.o" \
-"CMakeFiles/Squre_equation.dir/equation.cpp.o"
+"CMakeFiles/Squre_equation.dir/func.cpp.o"
 
 # External object files for target Squre_equation
 Squre_equation_EXTERNAL_OBJECTS =
 
 Squre_equation: CMakeFiles/Squre_equation.dir/main.cpp.o
-Squre_equation: CMakeFiles/Squre_equation.dir/equation.cpp.o
+Squre_equation: CMakeFiles/Squre_equation.dir/func.cpp.o
 Squre_equation: CMakeFiles/Squre_equation.dir/build.make
 Squre_equation: CMakeFiles/Squre_equation.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Squre_equation"

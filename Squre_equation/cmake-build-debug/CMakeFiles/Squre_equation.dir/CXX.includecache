@@ -6,15 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.h
-iostream
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/func.cpp
+func.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/func.h
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/func.h
+cstring
+-
+iomanip
+-
+stdio.h
+-
+time.h
 -
 math.h
--
-
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/main.cpp
-equation.h
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/equation.h
-cstring
 -
 
