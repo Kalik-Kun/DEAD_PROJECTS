@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Square_equation_server Select CMakeLists.txt
