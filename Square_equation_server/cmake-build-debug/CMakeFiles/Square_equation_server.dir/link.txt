@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/Square_equation_server.dir/main.cpp.o -o Square_equation_server 
