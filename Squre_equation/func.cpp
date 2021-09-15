@@ -4,83 +4,89 @@
 
 #include "func.h"
 
+char *name_input_file = "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Squre_equation/values.txt";
 long time_of_working_program = clock();
+extern double precision = 0.0001;
 
-my_pair research_ans(const int mod, var_equation var) {
+////////////////////////////////////////////////////////////////////////////////////////
+/// SHARE OF PROGRAM FOR USER MOD                                                   ///
+///////////////////////////////////////////////////////////////////////////////////////
 
-    double Discriminant = 0;
-    int numb_ent_var = 0;
-    my_pair answer = {0, 0};
+answer search_ans(var_equation var) {
 
-    ////////////////////////////////////////////////////////////////////////////////////////
-    /// SHARE OF PROGRAM FOR MODERATOR MOD                                               ///
-    ///////////////////////////////////////////////////////////////////////////////////////
+    double Discriminant = NAN; // Discriminant of equation
+    answer ans = {NAN, NAN, ERROR};   // answer that func return
 
-    if (mod == MODERATOR_MOD) {
-        my_pair zero_answer = check_zero(mod, var);
-
-        if (zero_answer.x1 != GOLD_NUMBER) return zero_answer;
-
-        Discriminant = calc_discr(var);
-
-        switch(check_discr(Discriminant)) {
-            case -1:
-                return {NOTHING_ANSWERS, NOTHING_ANSWERS};
-            case 0:
-                answer.x1 = calc_ans(var.a, var.b);
-                return {answer.x1, answer.x1};
-            default:
-                break;
+    if (fabs(var.a) < precision) {
+        if (fabs(var.b) < precision) {
+            if (fabs(var.c) < precision) {
+                return {0, 0, INFINITY_SOLVE}; // mean that you have infinity solve
+            }
+            return {0, 0, NO_SOLVE}; // mean that you don't have solve;
         }
-
-        answer = calc_ans(var.a, var.b, Discriminant);
-        return answer;
+        return {-var.c / var.b, -var.c / var.b, ONE_SOLVE};  // it's linear equation if a == 0
     }
-    ////////////////////////////////////////////////////////////////////////////////////////
-    /// SHARE OF PROGRAM FOR USER MOD                                                   ///
-    ///////////////////////////////////////////////////////////////////////////////////////
 
-    var = input_var();
-    if (var.a == GOLD_NUMBER)  return {GOLD_NUMBER, GOLD_NUMBER};
+    Discriminant = var.b * var.b - 4 * var.a * var.c;;
+
+    if (fabs(Discriminant) < precision) return calc_ans_with_one_root(var.a, var.b);
+    if (Discriminant < 0) return {0, 0, NO_SOLVE};
+
+    return calc_ans_with_two_roots(var.a, var.b, sqrt(Discriminant));
+
+}
+
+void search_ans_for_user () {
+
+    double Discriminant = NAN; // Discriminant of equation
+    struct var_equation var = input_var(); // our variables
+    answer ans = {NAN, NAN, ERROR}; // return answer of equation
 
     printf("You input: a: %lf, this b: %lf, this c: %lf\n",
            var.a, var.b, var.c);
 
-    check_zero(mod, var);
-    Discriminant = calc_discr(var);
-
-    switch(check_discr(Discriminant)) {
-        case -1:
-            std::printf("Discriminant is Negative. Equations doesn't have equation.\n");
-            return {GOLD_NUMBER, GOLD_NUMBER};
-        case 0:
-            answer.x1 = calc_ans(var.a, var.b);
-            std::printf("The equation have 1 answer:\n x = %lf\n",
-                        answer.x1);
+    ans = search_ans(var);
+    switch(search_ans(var).type_answer) {
+        case NO_SOLVE:
+            printf("The equation have 0 answer\n"
+                   "The equation doesn't have answers\n");
             time_program();
-            return {answer.x1, answer.x1};
-        default:
-            break;
+            return;
+
+        case ONE_SOLVE:
+            std::printf("The equation have 1 answer:\n x = %lf\n",
+                        ans.x1);
+            time_program();
+            return ;
+
+        case TWO_SOLVE:
+            ans = calc_ans_with_two_roots(var.a, var.b, Discriminant);
+            printf("The equation have 2 answer:\n"
+                   "x1 = %lf\n"
+                   "x2 = %lf\n"
+                   "END OF PROGRAM\n",
+                   ans.x1, ans.x2);
+            time_program();
+            return ;
+
+        case INFINITY_SOLVE:
+            printf("The equation have infinity answers\n"
+                   "The equation is not square.\n");
+            time_program();
+            return;
+
+        case ERROR:
+            printf("ERROR\n");
+            time_program();
+            return;
     }
-
-    answer = calc_ans(var.a, var.b, Discriminant);
-
-    printf("The equation have 2 answer:\n"
-           "x1 = %lf\n"
-           "x2 = %lf\n"
-           "END OF PROGRAM\n",
-           answer.x1, answer.x2);
-
-    time_program();
-
-    return answer;
 }
 
 var_equation input_var() {
     var_equation var = {0, 0, 0};
-    int check_number_input = 0;
+    int check_number_input = 0;  // check number input that you input just 3 variable
 
-    printf("\n\nУEnter 3 numbers\n"
+    printf("\n\nEnter 3 numbers\n"
            "that are the roots of the square equation\n");
     check_number_input =
             scanf("%lf%lf%lf", &var.a, &var.b, &var.c);
@@ -90,86 +96,42 @@ var_equation input_var() {
                "program doesn't read numbers\n"
                "Please reboot program\n\n");
         time_program();
-        return {GOLD_NUMBER, GOLD_NUMBER, GOLD_NUMBER};
+        return {NAN, NAN, NAN};
     }
 
     return var;
 }
 
-my_pair check_zero(const int mod, const var_equation var) {
-    ////////////////////////////////////////////////////////////////////////////////////////
-    /// SHARE OF PROGRAM FOR MODERATOR MOD                                               ///
-    ///////////////////////////////////////////////////////////////////////////////////////
-    if (mod == MODERATOR_MOD) {
-        if (-PERCEPTION < var.a && var.a < PERCEPTION) {
-            if (-PERCEPTION < var.b && var.b < PERCEPTION) {
-                if (-PERCEPTION < var.c && var.c < PERCEPTION) {
-                    return {INF_ANSWERS, INF_ANSWERS};
-                }
-                return {NOTHING_ANSWERS, NOTHING_ANSWERS};
-            }
-            return {-var.c / var.a, -var.c / var.a};
-        }
-        return {GOLD_NUMBER, GOLD_NUMBER};
-    }
+answer calc_ans_with_two_roots(const double a, const double b, const double sqrt_Discriminant) {
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(sqrt_Discriminant));
 
-    ////////////////////////////////////////////////////////////////////////////////////////
-    /// SHARE OF PROGRAM FOR USER MOD                                                   ///
-    ///////////////////////////////////////////////////////////////////////////////////////
-    if (-PERCEPTION < var.a && var.a < PERCEPTION) {
-        if (-PERCEPTION < var.b && var.b < PERCEPTION) {
-            if (-PERCEPTION < var.c && var.c < PERCEPTION) {
-                printf("The equation have infinity answers\n"
-                       "The equation is not square.\n");
-                time_program();
-                return {INF_ANSWERS, INF_ANSWERS};
-            }
-            printf("The equation have 0 answer\n"
-                   "The equation doesn't have answers\n");
-            time_program();
-            return {NOTHING_ANSWERS, NOTHING_ANSWERS};
-        }
-        printf("The equation have 1 answer\n"
-               "The equation is not square. It's Linear\n"
-               "x = %lf", -var.c/var.a);
-        time_program();
-        return {-var.c/var.a, -var.c/var.a};
-    }
-    return {GOLD_NUMBER, GOLD_NUMBER};
+    double x1 = (- b + sqrt_Discriminant) / (2 * a);
+    double x2 = (- b - sqrt_Discriminant) / (2 * a);
+
+    return answer {x1, x2, TWO_SOLVE};
 }
 
-int check_discr(const double Discriminant) {
-    if (Discriminant < 0)  return -1;
-    if (Discriminant == 0) return  0;
-    return 1;
-}
+answer calc_ans_with_one_root(const double a, const double b) {
+    assert(isfinite(a));
+    assert(isfinite(b));
 
-double calc_discr (const var_equation var) {
-    double Discriminant;
-    Discriminant = var.b * var.b - 4 * var.a * var.c;
-    return Discriminant;
-}
-
-my_pair calc_ans (const double a, const double b, const double Discriminant) {
-    double x1, x2;
-
-    x1 = (- b + std::sqrt(Discriminant)) / 2 * a;
-    x2 = (- b - std::sqrt(Discriminant)) / 2 * a;
-
-    return my_pair {x1, x2};
-}
-
-double calc_ans  (const double a, const double b) {
     double x = 0;
-    if (b == 0) return 0;
+    if (b == 0) return {0, 0, 0};
     x = -b / 2 * a;
-    return x;
+    return {x, x, ONE_SOLVE};
 }
+
+////////////////////////////////////////////////////////////////////////////////////////
+/// SHARE OF PROGRAM FOR UNIT TESTS                                            ///
+///////////////////////////////////////////////////////////////////////////////////////
 
 char unit_test() {
-    FILE* file_with_values_for_test;
+    FILE* file_with_values_for_test = nullptr;
     int size = 0;
-    if ((file_with_values_for_test = fopen(FILENAME_INPUT, "r")) == NULL) {
+    int type_answer = 0;
+    if ((file_with_values_for_test = fopen(name_input_file, "r")) == NULL) {
         printf("\nERROR open file\n");
         return 0;
     }
@@ -180,18 +142,20 @@ char unit_test() {
         double a, b, c, x1, x2;
         fscanf(file_with_values_for_test, "%lf%lf%lf",
                &a, &b, &c);
-        fscanf(file_with_values_for_test, "%lf%lf",
-               &x1, &x2);
-        if (unit_test_check_equal({a, b, c,}, {x1, x2}, i) == 0)
+        fscanf(file_with_values_for_test, "%lf%lf%d",
+               &x1, &x2, &type_answer);
+        if (unit_test_check_equal({a, b, c}, {x1, x2, type_answer}, i) == 0)
             return 0;
     }
 
     return 1;
 }
 
-char unit_test_check_equal (var_equation input_var, my_pair real_answer, const int number) {
-    my_pair prog_answer = research_ans(MODERATOR_MOD, input_var);
-    if (real_answer.x1 == prog_answer.x1 && real_answer.x2 == prog_answer.x2) {
+char unit_test_check_equal (var_equation input_var, answer real_answer, const int number) {
+    answer prog_answer = search_ans(input_var);
+
+    if (real_answer.x1 == prog_answer.x1 && real_answer.x2 == prog_answer.x2
+    && real_answer.type_answer == prog_answer.type_answer) {
         printf("\n\n___________________________________\n"
                           "___________________________________\n"
                           "UNIT TEST %d SUCCESSFULLY COMPLETED\n"
@@ -206,10 +170,11 @@ char unit_test_check_equal (var_equation input_var, my_pair real_answer, const i
                        "___________________________________\n"
                        "___________________________________\n\n\n", number);
     printf(  "input_var: %lf. %lf, %lf\n"
-                    "prog_answer: %lf, %lf\n"
-                    "real_answer: %lf, %lf\n\n",
+                    "prog_answer: %lf, %lf, %d\n"
+                    "real_answer: %lf, %lf, %d\n\n",
             input_var.a, input_var.b, input_var.c,
-            prog_answer.x1, prog_answer.x2, real_answer.x1, real_answer.x2);
+            prog_answer.x1, prog_answer.x2, prog_answer.type_answer,
+            real_answer.x1, real_answer.x2, real_answer.type_answer);
 
     return 0;
 }

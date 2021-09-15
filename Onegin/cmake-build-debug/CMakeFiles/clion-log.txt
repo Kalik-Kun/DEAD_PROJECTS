@@ -1,0 +1,6 @@
+/snap/clion/163/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin
+-- Configuring done
+CMake Error: Cannot determine link language for target "Onegin".
+CMake Error: CMake can not determine linker language for target: Onegin
+-- Generating done
+CMake Generate step failed.  Build files cannot be regenerated correctly.

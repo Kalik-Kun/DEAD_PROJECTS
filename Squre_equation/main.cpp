@@ -3,7 +3,7 @@
 
 
 int main() {
-    int mod = 0;
+    int mod = 0; // build 2 targets
 
     printf("PLease input mode:\n"
                 "1 - Count answer of square equation\n"
@@ -13,7 +13,7 @@ int main() {
 
     switch(mod) {
         case 1:
-            research_ans(USER_MODE);
+            search_ans_for_user();
             break;
         case 2:
             if (unit_test()) {
@@ -24,8 +24,8 @@ int main() {
             }
             return 0;
         default:
-            std::printf("Please input number that i write\n"
-                        "Goodbye\n\n");
+            printf("Please input number that i write\n"
+                          "Goodbye\n\n");
             break;
     }
 

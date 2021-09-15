@@ -1,110 +1,12 @@
-/*programing for sort string in the text "Oneging"
- * MakeFile: None
- * Тест пузырька и Обратного пузырька пройден без ошибок
- * */
+//
+// Created by arlik_null on 14.09.2021.
+//
 
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <string.h>
-
-const char *name_file = "Onegin.txt";
-const char *output_name = "output_file";
-
-// одна строка
-struct mystr {
-    char *str;
-    long len = 0;
-};
-
-// массив указателей на строки
-struct myarr {
-    struct mystr* arr;
-    long size = 0;
-}; 
-
-FILE*           open_file                       ();                             // открывает файл
-struct  myarr   make_array                      (FILE*);                        // распределяет текст в двумерный массив чаров
-char            checking_for_a_word             (char);                         // смотрит чтобы в массив поподали только слова
-void            print_array                     (struct myarr);                 // печатает итоговый массив
-void            print_array_on_file             (struct myarr);                 // печатает отсорченый массив в файл
-struct  mystr*  size_up_array                   (struct mystr*, const long);    // изменяет длину массива указателей на строки на size
-char*           size_up_len_string              (char*, const long);            // изменяет длину строки на size
-struct  myarr   bubble_sort                     (struct myarr);                 // возвращает отсортированый пузырком массив
-struct  myarr   bubble_sort_revers              (struct myarr);                 // сортирует с конца ищет рифмы
-char            comp                            (struct mystr, struct mystr);   // компонатор для пузырьковой сортировки
-void            _swap                           (struct mystr*, struct mystr*); // свап который не работает
-char            comp_reverse                    (struct mystr, struct mystr);   // компоратор для обратного пузырька
-int             comp_qsort                      (const void*, const void*);     // компоратор для квик сорта
-int             comp_qsort_reverse              (const void*, const void*);     // компоратор для обратного квик сорта
-void            unit_test_bubble_sort            (struct myarr);                // тест пузырька
-void            unit_test_reverse_bubble_sort   (struct myarr);                 // тест обратного пузырька
-
-
-int main() {
-    
-    int user_input_for_mode_setings;
-    FILE *file                        = open_file();
-    struct myarr arr                  = make_array(file);
-    long working_hours_of_the_program = clock();
-
-    printf("Input Your's sort:\n1 - bubble sort"
-           "\n2 - reverse bubble sort (rhyme  sort)\n3-quick sort"
-           "\n4(1, 2) - checking the validity of sort"
-           "(example 41 checking the validity of BUBBLE sort)\n");
-
-    scanf("%d", &user_input_for_mode_setings);
-    switch (user_input_for_mode_setings) {
-        case 1:
-            printf("\n\nYou change bubble sort\n"
-                   " sort file: output_file.txt\n");
-            arr = bubble_sort(arr);
-            break;
-
-        case 2:
-            printf("\n\nYou change reverse bubble sort\n"
-                   " sort file: output_file.txt\n");
-            arr = bubble_sort_revers(arr);
-            break;
-        case 3:
-            printf("\n\nYou change qick sort\n"
-                   " sort file: output_file.txt\n");
-            qsort(arr.arr, arr.size, sizeof(struct mystr), comp_qsort);
-            break;
-        case 41:
-            printf("\n\nThis unit test bubble sort\n"
-                   "program input number this is count missed strings\n\n");
-            unit_test_bubble_sort(arr);
-            break;
-        case 42:
-            printf("\n\nThis unit test reverse bubble sort\n"
-                   "program input number this is count missed strings\n\n");
-            unit_test_reverse_bubble_sort(arr);
-            break;
-        default:
-            printf("\nSorry i don't andesrtand my progrram\n"
-                   "plese restard\n\n");
-            break;
-    }
-    
-    //print_array(arr);
-    print_array_on_file(arr);
-    
-    printf("END OF PROGRAM\n\n\nWorking Time of the Program:"
-           " %f sec\nNumber Tacks: %ld\n",
-           (float)working_hours_of_the_program / CLOCKS_PER_SEC,
-           working_hours_of_the_program);
-    
-    fclose(file);
-    return 0;
-}
-
-
+#include "onegin_func.h"
 
 FILE* open_file() {
 
-    FILE  *fp = fopen(name_file, "r");
+    FILE  *fp = fopen(envp + NAME_INPUT_FILE, "r");
     return fp;
 
 }
@@ -116,7 +18,7 @@ struct myarr make_array(FILE *file) {
     long          string_count = 0;
     long          len          = 0;
     char         *arr          = NULL;
-    struct mystr *values       = NULL;    
+    struct mystr *values       = NULL;
 
     while (fscanf(file, "%c", &symb) != -1) {
 
@@ -211,7 +113,7 @@ struct myarr bubble_sort(struct myarr arr) {
         for (int k = 0; k < arr.size - i; k ++) {
 
             if (comp(arr.arr[k], arr.arr[k + 1])) {
-            //if (strcmp(arr.arr[k].str, arr.arr[k + 1].str) > 0){
+                //if (strcmp(arr.arr[k].str, arr.arr[k + 1].str) > 0){
                 //_swap(&arr.arr[k], &arr.arr[k + 1]); // я не знаю почему это не работает
                 struct mystr str3;
                 str3 = arr.arr[k];
