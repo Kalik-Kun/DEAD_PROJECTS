@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.17)
-project(Onegin C)
+cmake_minimum_required(VERSION 3.20)
+project(untitled)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Onegin main.cpp onegin_func.cpp onegin_func.h main.cpp)
+add_executable(untitled main.cpp MyLibString.cpp MyLibString.h)
