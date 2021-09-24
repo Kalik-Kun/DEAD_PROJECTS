@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(untitled)
+project(Onegin)
 
 set(CMAKE_CXX_STANDARD 14)
 
