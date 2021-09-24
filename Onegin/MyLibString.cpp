@@ -21,7 +21,6 @@ FILE* open_file(const char *full_filename) {
     FILE  *fp = fopen(full_filename, "r");
 
     // use assert for find BAGS. when I will do program i disconnect they
-    assert(fp);
     if (fp == nullptr) {
         printf("ERROR: file can't input\n"
                       "Please reload program\n");
@@ -97,7 +96,7 @@ void  bubble_sort(struct myarr* arr) {
     for (size_t i = 1; i <= arr->size; i ++) {
         for (size_t k = 0; k < arr->size - i; k ++) {
 //            printf("%d %s %s\n", k, arr->arr[k].str, arr->arr[k + 1].str);
-            if (comp(&arr->arr[k], &arr->arr[k + 1])) {
+            if (comp(&arr->arr[k], &arr->arr[k + 1]) == 1) {
                 swap_mystr(&arr->arr[k], &arr->arr[k + 1]);
             }
         }
@@ -108,7 +107,7 @@ void bubble_sort_revers(struct myarr* arr) {
 
     for (int i = 1; i <= arr->size; i ++) {
         for (int k = 0; k < arr->size - i; k ++ ) {
-            if (comp_reverse(&arr->arr[k], &arr->arr[k + 1])) {
+            if (comp_reverse(&arr->arr[k], &arr->arr[k + 1]) == 1) {
                 swap_mystr(&arr->arr[k], &arr->arr[k + 1]);
             }
         }
@@ -122,7 +121,7 @@ void quick_sort(struct myarr* arr_string) {
 void quick_sort_arr_string (struct mystr* arr_string, size_t left, size_t right) {
     if (left >= right) return;
     if (left + 1 == right) {
-        if (comp(&arr_string[left], &arr_string[right]))
+        if (comp(&arr_string[left], &arr_string[right]) == 1)
             swap_mystr(&arr_string[left], &arr_string[right]);
         return;
     }
@@ -133,8 +132,8 @@ void quick_sort_arr_string (struct mystr* arr_string, size_t left, size_t right)
 
     while (l <= r) {
 //        printf("%s, %s\n", arr_string[l].str, arr_string[r].str);
-        while (comp(&support_elem, &arr_string[l]) && (l <= r)) l++;
-        while (comp(&arr_string[r], &support_elem) && (l <= r)) r--;
+        while (comp(&support_elem, &arr_string[l]) == 1 && (l <= r)) l++;
+        while (comp(&arr_string[r], &support_elem) == 1 && (l <= r)) r--;
 
         if (l <= r) {
             swap_mystr(&arr_string[l], &arr_string[r]);
@@ -171,7 +170,7 @@ void quick_sort_reverse (struct myarr* arr_string) {
 void quick_sort_reverse_arr_string (struct mystr* arr_string, size_t left, size_t right) {
     if (left >= right) return;
     if (left + 1 == right) {
-        if (comp_reverse(&arr_string[left], &arr_string[right]))
+        if (comp_reverse(&arr_string[left], &arr_string[right]) == 1)
             swap_mystr(&arr_string[left], &arr_string[right]);
         return;
     }
@@ -182,8 +181,8 @@ void quick_sort_reverse_arr_string (struct mystr* arr_string, size_t left, size_
 
     while (l <= r) {
 //        printf("%s, %s\n", arr_string[l].str, arr_string[r].str);
-        while (comp_reverse(&support_elem, &arr_string[l]) && (l <= r)) l++;
-        while (comp_reverse(&arr_string[r], &support_elem) && (l <= r)) r--;
+        while (comp_reverse(&support_elem, &arr_string[l]) == 1 && (l <= r)) l++;
+        while (comp_reverse(&arr_string[r], &support_elem) == 1 && (l <= r)) r--;
         if (l <= r) {
             swap_mystr(&arr_string[l], &arr_string[r]);
             l++;
@@ -197,7 +196,7 @@ void quick_sort_reverse_arr_string (struct mystr* arr_string, size_t left, size_
     quick_sort_reverse_arr_string(arr_string, l, right);
 }
 
-
+// todo uneverse comp
             /// COMPARATORS FOR SORT FUNCTIONS ///
 char comp(struct mystr* str1, struct mystr* str2) {
 
@@ -207,11 +206,11 @@ char comp(struct mystr* str1, struct mystr* str2) {
     for (size_t i = 0, j = 0; (i < str1->len) && (j < str2->len);) {
         if (is_it_letter(str1->str[i]) && is_it_letter(str2->str[j])) {
             if (str1->str[i] > str2->str[j]) {
-                return true;
+                return 1;
             }
 
             if (str1->str[i] < str2->str[j]) {
-                return false;
+                return -1;
             }
             i++; j++; count_letters1++; count_letters2++;
         }
@@ -230,13 +229,17 @@ char comp(struct mystr* str1, struct mystr* str2) {
                 break;
             }
     }
-    if (count_letters1 == 0 && count_letters2 == 0)
-        if (str1->len > str2->len) return true;
-        else return false;
-    if (count_letters2 == 0) return true;
-    if (count_letters1 == 0) return false;
-    if (str1->len > str2->len) return true;
-    return false;
+
+    if (count_letters1 == 0 && count_letters2 == 0) {
+        if (str1->len > str2->len) return 1;
+        if (str1->len < str2->len) return -1;
+        return 0;
+    }
+    if (count_letters2 == 0)    return 1;
+    if (count_letters1 == 0)    return -1;
+    if (str1->len > str2->len)  return 1;
+    if (str1->len < str2->len)  return -1;
+    return 0;
 }
 
 char comp_reverse(struct mystr* str1, struct mystr* str2) {
@@ -253,11 +256,11 @@ char comp_reverse(struct mystr* str1, struct mystr* str2) {
             is_it_letter(str2->str[str2->len - j])) {
 
             if (str1->str[str1->len - i] > str2->str[str2->len - j]) {
-                return true;
+                return 1;
             }
 
             if (str1->str[str1->len - i] < str2->str[str2->len - j]) {
-                return false;
+                return -1;
             }
             i++; j++; count_letters1++; count_letters2++;
         }
@@ -277,13 +280,16 @@ char comp_reverse(struct mystr* str1, struct mystr* str2) {
             }
     }
 
-    if (count_letters1 == 0 && count_letters2 == 0)
-        if (str1->len > str2->len) return true;
-        else                       return false;
-    if (count_letters2 == 0) return true;
-    if (count_letters1 == 0) return false;
-    if (str1->len > str2->len) return true;
-    return false;
+    if (count_letters1 == 0 && count_letters2 == 0) {
+        if (str1->len > str2->len) return 1;
+        if (str1->len < str2->len) return -1;
+        return 0;
+    }
+    if (count_letters2 == 0)    return 1;
+    if (count_letters1 == 0)    return -1;
+    if (str1->len > str2->len)  return 1;
+    if (str1->len < str2->len)  return -1;
+    return 0;
 }
 
 int comp_qsort(const void* vd1, const void* vd2) {

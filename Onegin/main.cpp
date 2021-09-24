@@ -20,9 +20,9 @@ int main() {
     const char* _name_clean_file_  = "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/Files/Clear_Onegin.txt"; // clean file
 
     long         working_hours_of_the_program = clock();
-    int          user_input_for_mode_setings;
+    int          user_input_for_mode_setings  = 0;
     FILE*        file                         = open_file(_name_clean_file_);
-    struct myarr arr                          = file_reading(file, _name_clean_file_);
+    myarr        arr                          = file_reading(file, _name_clean_file_);
 
     printf("Cleaning and record file: 0\n"
            "Input Your's sort:\n"
