@@ -142,7 +142,7 @@ void quick_sort_arr_string (struct mystr* arr_string, size_t left, size_t right)
         }
     }
 
-//    if (support_elem.str[0] == '*') {
+//    if (support_elem.str[0]) {
 //        printf("left: %d, l: %d, right: %d, r: %d\n", left, l, right, r);
 //        printf("SUPPORT ELEMENT: %s\n", support_elem.str);
 //        printf("LEFT SIDE:\n");

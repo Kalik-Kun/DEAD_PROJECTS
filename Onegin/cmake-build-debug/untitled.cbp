@@ -17,16 +17,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug"/>
 				<Option type="4"/>
@@ -37,30 +27,18 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="untitled">
-				<Option output="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
+			<Target title="rebuild_cache">
 				<Option working_dir="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="untitled/fast">
-				<Option output="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
+			<Target title="Onegin">
+				<Option output="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Onegin" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -75,7 +53,29 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 Onegin"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Onegin/fast">
+				<Option output="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Onegin" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 Onegin/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -83,13 +83,13 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/MyLibString.cpp">
-			<Option target="untitled"/>
+			<Option target="Onegin"/>
 		</Unit>
 		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/MyLibString.h">
-			<Option target="untitled"/>
+			<Option target="Onegin"/>
 		</Unit>
 		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/main.cpp">
-			<Option target="untitled"/>
+			<Option target="Onegin"/>
 		</Unit>
 		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

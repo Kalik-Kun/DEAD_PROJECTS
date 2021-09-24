@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp MyLibString.cpp MyLibString.h)
+add_executable(Onegin main.cpp MyLibString.cpp MyLibString.h)
