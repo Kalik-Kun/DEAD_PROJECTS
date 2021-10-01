@@ -7,102 +7,113 @@
 const char free_error_pointer = 13;
 const char zombie_number = 17;
 
-char StackCtor (struct Stack *my_stack, long amount_byte,
-        long capacity, int* error) {
-    assert(my_stack);
+char SkekCtor   (struct Skek *my_skek, long amount_byte,
+                long capacity, int* error) {
+    assert(my_skek);
 
-    if ((my_stack->data = (void *) calloc(capacity, amount_byte)) == nullptr) {
+    if ((my_skek->data = (void *) calloc(capacity, amount_byte)) == nullptr) {
         return false;
     }
 
-    my_stack->size_type = amount_byte;
-    my_stack->size      = 0;
-    my_stack->capacity  = capacity;
+    my_skek->size_type = amount_byte;
+    my_skek->size      = 0;
+    my_skek->capacity  = capacity;
 
     return true;
 }
 
-char StackDtor(struct Stack *my_stack, int *error) { // todo distrc for void
-    assert(my_stack);
+char SkekDtor(struct Skek *my_skek, int *error) { // todo distrc for void
+    assert(my_skek);
 
-    // todo repair this for void stack
-    kekset(my_stack->data, (void *) &zombie_number, my_stack->capacity);
+    // todo repair this for void Skek
+    kekset(my_skek->data, (void *) &zombie_number, my_skek->capacity);
 
-    if (my_stack->data == (void *) &free_error_pointer) {
+    if (my_skek->data == (void *) &free_error_pointer) {
         *error = TWICE_ALLOCATE;
-        printf("ERROR: free memory twice\n");
-        return 0;
+        return false;
     }
 
-    free(my_stack->data);
-    my_stack->size = -1;
-    my_stack->size_type = -1;
-    my_stack->capacity = -1;
-    my_stack->data = (void *) &free_error_pointer;
+    free(my_skek->data);
+    my_skek->size = -1;
+    my_skek->size_type = -1;
+    my_skek->capacity = -1;
+    my_skek->data = (void *) &free_error_pointer;
     return true;
 }
 
-char StackExtension(struct Stack *my_stack, int* error) {
-    assert(my_stack);
+char SkekExtension(struct Skek *my_skek, int* error) {
+    assert(my_skek);
 
-    if (!my_stack->data || my_stack->data == &free_error_pointer) {
+    if (!my_skek->data || my_skek->data == &free_error_pointer) {
         *error = USE_FREE_MEMORY;
         return false;
     }
 
-    if (my_stack->size == my_stack->capacity) { // resize on
+    if (my_skek->size == my_skek->capacity) { // resize on
 
         printf("\n"
                "_____________________________\n"
                "_____________________________\n"
-               "I'am StackExtension\n"
+               "I'am SkekExtension\n"
                "I increase resize memory:\n"
                "size: %ld\n"
                "capacity:%ld\n"
                "_____________________________\n"
-               "_____________________________\n", my_stack->size, my_stack->capacity);   // todo specificator for
-        my_stack->capacity *= 2;
-        my_stack->data = (void *)realloc(my_stack->data,
-                                        my_stack->capacity * my_stack->size_type);
+               "_____________________________\n", my_skek->size, my_skek->capacity);   // todo specificator for
+        my_skek->capacity *= 2;
+        my_skek->data = (void *)realloc(my_skek->data,
+                                        my_skek->capacity * my_skek->size_type);
     }
 
-    if (my_stack->size * 2 == my_stack->capacity) {  // resize low
+    if (my_skek->size * 2 == my_skek->capacity) {  // resize low
         printf("\n"
                "_____________________________\n"
                "_____________________________\n"
-               "I'am StackExtension\n"
+               "I'am SkekExtension\n"
                "I decrease resize memory:\n"
                "size: %ld\n"
                "capacity:%ld\n"
                "_____________________________\n"
-               "_____________________________\n", my_stack->size, my_stack->capacity);
+               "_____________________________\n", my_skek->size, my_skek->capacity);
     }
 
-    my_stack->capacity = (long) my_stack->capacity / 2;
-    my_stack->data = (void *)realloc(my_stack->data,
-                                     my_stack->capacity * my_stack->size_type);
+    my_skek->capacity = (long) my_skek->capacity / 2;
+    my_skek->data = (void *)   realloc(my_skek->data,
+                                     my_skek->capacity * my_skek->size_type);
 
     return true;
 }
 
-char StackPush(struct Stack *my_stack, void* value, int* error) {
-    assert(my_stack);
+void* SkekGet (struct Skek* my_skek, int* error) {
+    
+}
 
-    // todo i you will make diff stack change this
-    StackExtension(my_stack);
-    kekset(my_stack->data, value);
-    my_stack->size++;
+
+char SkekPush(struct Skek *my_skek, void* value, int* error) {
+    assert(my_skek);
+
+    // todo i you will make diff Skek change this
+    if (!SkekExtension(my_skek, error)) return false;
+    kekset(my_skek->data, value, my_skek->size_type, my_skek->size_type);
+    my_skek->size++;
     return true;
 }
 
-void* StackPop (struct Stack* my_stack, int *error) {
-    void* elem = (void *)calloc(my_stack->size_type, sizeof (char));
-    kekset(elem, (void *) (my_stack->data + my_stack->size));
+void* SkekPop (struct Skek* my_skek, int *error) {
+    assert(my_skek);
+    void* elem = (void *)calloc(my_skek->size_type, sizeof (char));
+    void* top_elem = (char *) my_skek->data + (my_skek->size - 1)*my_skek->size_type;
+    kekset(elem, top_elem, my_skek->size_type,  my_skek->size_type);
+    my_skek->size--;
 
-
+    if (!SkekExtension(my_skek, error)) return nullptr;
+    return elem;
 }
 
-char kekset (void* ptr, void* elem, long count_byte, long size_type, int* error = (int *)UNDEFINED) {
+
+
+
+char kekset (void* ptr, void* elem, long count_byte, long size_type, int* error) {
     // todo finish up kekset
     assert(ptr);
     assert(elem);

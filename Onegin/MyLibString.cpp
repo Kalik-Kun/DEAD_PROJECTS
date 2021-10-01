@@ -203,27 +203,27 @@ char comp(struct mystr* str1, struct mystr* str2) {
     // if string havn't letters then  this string go back
     size_t count_letters1 = 0;
     size_t count_letters2 = 0;
-    for (size_t i = 0, j = 0; (i < str1->len) && (j < str2->len);) {
-        if (is_it_letter(str1->str[i]) && is_it_letter(str2->str[j])) {
-            if (str1->str[i] > str2->str[j]) {
+    for (size_t for_first = 0, for_second = 0; (for_first < str1->len) && (for_second < str2->len);) {
+        if (is_it_letter(str1->str[for_first]) && is_it_letter(str2->str[for_second])) {
+            if (tolower(str1->str[for_first]) > tolower(str2->str[for_second])) {
                 return 1;
             }
 
-            if (str1->str[i] < str2->str[j]) {
+            if (tolower(str1->str[for_first]) < tolower(str2->str[for_second])) {
                 return -1;
             }
-            i++; j++; count_letters1++; count_letters2++;
+            for_first++; for_second++; count_letters1++; count_letters2++;
         }
 
-        while ((i < str1->len))
-            if (!is_it_letter(str1->str[i])) i++;
+        while ((for_first < str1->len))
+            if (!is_it_letter(str1->str[for_first])) for_first++;
             else {
                 count_letters1++;
                 break;
             }
 
-        while ((j < str2->len))
-            if (!is_it_letter(str2->str[j])) j++;
+        while ((for_second < str2->len))
+            if (!is_it_letter(str2->str[for_second])) for_second++;
             else {
                 count_letters2++;
                 break;
@@ -249,31 +249,31 @@ char comp_reverse(struct mystr* str1, struct mystr* str2) {
     size_t count_letters1 = 0;
     size_t count_letters2 = 0;
 //    printf("%s %s\n", str1->str, str2->str);
-    for (size_t i = 1, j = 1; (i <= str1->len) && (j <= str2->len);) {
+    for (size_t for_first = 1, for_second = 1; (for_first<= str1->len) && (for_second <= str2->len);) {
 
 //        printf("%d %c  %d %c\n", i, str1->str[i], j, str2->str[j]);
-        if (is_it_letter(str1->str[str1->len - i]) &&
-            is_it_letter(str2->str[str2->len - j])) {
+        if (is_it_letter(str1->str[str1->len - for_first]) &&
+            is_it_letter(str2->str[str2->len - for_second])) {
 
-            if (str1->str[str1->len - i] > str2->str[str2->len - j]) {
+            if (tolower(str1->str[str1->len - for_first]) > tolower(str2->str[str2->len - for_second])) {
                 return 1;
             }
 
-            if (str1->str[str1->len - i] < str2->str[str2->len - j]) {
+            if (tolower(str1->str[str1->len - for_first]) < tolower(str2->str[str2->len - for_second])) {
                 return -1;
             }
-            i++; j++; count_letters1++; count_letters2++;
+            for_first++; for_second++; count_letters1++; count_letters2++;
         }
 
-        while ((i <= str1->len))
-            if (!is_it_letter(str1->str[str1->len - i])) i++;
+        while ((for_first <= str1->len))
+            if (!is_it_letter(str1->str[str1->len - for_first])) for_first++;
             else {
                 count_letters1++;
                 break;
             }
 
-        while ((j <= str2->len))
-            if (!is_it_letter(str2->str[str2->len - j])) j++;
+        while ((for_second <= str2->len))
+            if (!is_it_letter(str2->str[str2->len - for_second])) for_second++;
             else {
                 count_letters2++;
                 break;
