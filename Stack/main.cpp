@@ -1,5 +1,8 @@
+#include "LibStack.h"
+
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Skek my_skek = {};
+
     return 0;
 }
