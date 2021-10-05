@@ -20,6 +20,7 @@ struct mystr {
 
 // array pointers on my string
 struct myarr {
+    void* buff;
     struct mystr* arr;
     size_t size;
 };

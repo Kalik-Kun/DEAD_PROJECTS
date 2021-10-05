@@ -64,7 +64,7 @@ struct myarr file_reading(FILE* fp, const char* name_file) {
 
         number_line++;
     }
-    return {arr_string, count_line};
+    return {buff, arr_string,count_line};
 }
 
 void free_memory_for_string_array (struct myarr* arr_string) {

@@ -118,6 +118,7 @@ int main() {
            (float)working_hours_of_the_program / CLOCKS_PER_SEC,
            working_hours_of_the_program);
 
+    free(arr.buff);
     free(arr.arr);
     fclose(file);
 

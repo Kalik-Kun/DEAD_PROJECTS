@@ -21,8 +21,8 @@ string.h
 -
 limits.h
 -
-
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/main.cpp
-LibStack.h
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.h
+time.h
+-
+map
+-
 

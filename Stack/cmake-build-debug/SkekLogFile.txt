@@ -1,0 +1,235 @@
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      1
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      2
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+data[1] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      3
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+data[1] = 2
+data[2] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      4
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+data[1] = 2
+data[2] = 2
+data[3] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      5
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+data[1] = 2
+data[2] = 2
+data[3] = 2
+data[4] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      6
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+data[1] = 2
+data[2] = 2
+data[3] = 2
+data[4] = 2
+data[5] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      7
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+data[1] = 2
+data[2] = 2
+data[3] = 2
+data[4] = 2
+data[5] = 2
+data[6] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      8
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+data[1] = 2
+data[2] = 2
+data[3] = 2
+data[4] = 2
+data[5] = 2
+data[6] = 2
+data[7] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      9
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+data[1] = 2
+data[2] = 2
+data[3] = 2
+data[4] = 2
+data[5] = 2
+data[6] = 2
+data[7] = 2
+data[8] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
+
+TIME : Tue Oct  5 03:07:19 2021
+START DUMP
+LAUNCHED FROM:
+FILE: Don't know
+FUNC: Don't know
+LINE: -1
+
+NORMAL SKEK
+Skek->size:      10
+Skek->type_size: 4
+Skek->capacity:  10
+Skek->data:
+data[0] = 2
+data[1] = 2
+data[2] = 2
+data[3] = 2
+data[4] = 2
+data[5] = 2
+data[6] = 2
+data[7] = 2
+data[8] = 2
+data[9] = 2
+
+type of elements: int
+END SKEK
+END DUMB
+
