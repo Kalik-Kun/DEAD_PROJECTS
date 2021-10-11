@@ -27,7 +27,7 @@ struct myarr {
 
 // work with file func
 //char*           find_dir_prog                   (char *envp[]);
-FILE*           open_file                       (const char *);     // open file
+FILE*           open_file                       (const char *);                 // open file
 
 // work with array function
 struct  myarr   file_reading                    (FILE*, const char*);           // reading file and write line on arr string
@@ -61,7 +61,7 @@ void            copy_arr_string                 (struct myarr*, struct myarr*); 
 size_t          out_file_size                   (const char *);                 // return size of file(inout name file in const char*
 size_t          find_count_elems                (char* , const char);           // to count amount of input simb in inout strung
 void            print_array                     (struct myarr);                 // print final array
-void            print_array_on_file             (struct myarr*, const char*);                // print sorted array in file
+void            print_array_on_file             (struct myarr*, const char*);   // print sorted array in file
 void            reverse_mystr                   (struct mystr*);                // reverse input string
 char            is_it_letter                    (const char);                   // checks a character for a letter return true if it is letter else false
 template <typename type>

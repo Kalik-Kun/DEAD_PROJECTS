@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.cpp
+LibStack.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.h
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.h
+iostream
+-
+stdlib.h
+-
+assert.h
+-
+string.h
+-
+limits.h
+-
+time.h
+-
+map
+-
+

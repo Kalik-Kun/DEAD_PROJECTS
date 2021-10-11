@@ -1,0 +1,5 @@
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/assembler/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/assembler/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/assembler/cmake-build-debug/CMakeFiles/assembler.dir
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/assembler/cmake-build-debug/Stack/CMakeFiles/rebuild_cache.dir
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/assembler/cmake-build-debug/Stack/CMakeFiles/edit_cache.dir

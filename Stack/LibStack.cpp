@@ -4,45 +4,29 @@
 
 #include "LibStack.h"
 
+const char FREE_ERROR_POINTER       = 13;
+const char ZOMBIE_NUMBER            = 17;
+const long BAD_SIZE                 = LONG_MAX - 3453;
 
-const std::map<int, char*> NAME_ERRORS = {
-        {0  , "UNDEFINED"},
-        {1  , "NULLPTR_ON_SKEK"},
-        {2  , "SIZE_LARGE_CAPACITY"},
-        {3  , "STACK_ALREADY_CREATED"},
-        {4  , "ERROR_ALLOCATE_MEMORY"},
-        {5  , "GET_WITHOUT_ELEM"},
-        {6  , "POP_WITHOUT_ELEM"},
-        {7  , "TWICE_ALLOCATE"},
-        {8  , "NEGATIVE_SIZE"},
-        {9  , "NULLPTR_IN_DATA"},
-        {10 , "NULLPTR_ARRAY"},
-        {11 , "NULLPTR_ELEM"},
-        {11 , "FILE_OPEN"},
+const long  CANARY_FRONT            = 0xD0D0B00B5;
+const long  CANARY_BEHIND           = 0xD0D0B00B5;
+const long  CANARY_DATA_FRONT       = 0xD0D0B00B5;
+const long  CANARY_DATA_BEHIND      = 0xD0D0B00B5;
 
-};
-
-const char  FREE_ERROR_POINTER      = 13;
-const char  ZOMBIE_NUMBER           = 17;
-const long  BAD_SIZE                = LONG_MAX - 3243;
-const long  CANARY_NUMBER           = 0xD0D0B00B5;
-
+const char* LOGFILE_NAME            = "SkekLogFile.txt";
 long        START_CAPACITY          = 16;
 long        START_SIZE_TYPE         = 1;
 int         ERR_UNDEFINED           = UNDEFINED;
-
 const int   FACTOR_INCR_CAPACITY    = 2;
 const int   FACTOR_DECR_CAPACITY    = 2;
-const char* LOGFILE_NAME            = "SkekLogFile.txt";
 const int   PRINT_TYPE              = 1;
-
 
 char SkekCtor   (struct Skek *my_skek, long amount_byte_type,
                 long capacity, int* error) {
     // for deleted old logfile and create it also
     CleanLogFile(LOGFILE_NAME);
 
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return false;
     }
 
@@ -52,40 +36,75 @@ char SkekCtor   (struct Skek *my_skek, long amount_byte_type,
         my_skek->type_size != 0) {
 
         *error = STACK_ALREADY_CREATED;
-        SkekDump(my_skek, error, DEB_ELEM);
+        SkekDump(my_skek, error, DEB_ELEM("STACK_ALREADY_CREATED"));
         return false;
     }
+    #ifdef NO_DEFENSE
+        if ((my_skek->data = (void *) calloc(capacity, amount_byte_type)) == nullptr) {
+            *error = ERROR_ALLOCATE_MEMORY;
+            SkekDump(my_skek, error, DEB_ELEM("ERROR_ALLOCATE_MEMORY"));
+            return false;
+        }
+    #endif
 
-    if ((my_skek->data = (void *) calloc(capacity, amount_byte_type)) == nullptr) {
-        *error = ERROR_ALLOCATE_MEMORY;
-        SkekDump(my_skek, error, DEB_ELEM);
-        return false;
-    }
+    #ifndef NO_DEFENSE
+        if ((my_skek->canary_data_front = (void *) calloc(capacity * amount_byte_type + 2 * sizeof(long) + 1, sizeof(char))) == nullptr) {
+            *error = ERROR_ALLOCATE_MEMORY;
+            SkekDump(my_skek, error, DEB_ELEM("ERROR_ALLOCATE_MEMORY"));
+            return false;
+        }
+        kekset(my_skek->canary_data_front, (void *) &CANARY_DATA_FRONT,
+               1, sizeof(long), error);
+
+        my_skek->data               = (void *) ((char *) my_skek->canary_data_front + sizeof(long));
+        my_skek->canary_data_behind = (void *) ((char *) my_skek->data + capacity * amount_byte_type);
+
+        kekset(my_skek->canary_data_behind, (void *) &CANARY_DATA_BEHIND,
+               1, sizeof(long), error);
+    #endif
+
+    #ifdef SECOND_DEFENSE_LAYER
+        my_skek->hash = MyHashCalc(my_skek->data, my_skek->size, error);
+    #endif
 
     my_skek->type_size = amount_byte_type;
     my_skek->size      = 0;
     my_skek->capacity  = capacity;
     START_CAPACITY     = capacity;
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return false;
     }
     return true;
 }
 
 char SkekDtor(struct Skek *my_skek, int *error) { // todo distrc for void
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return false;
     }
+    #ifdef NO_DEFENSE
+        kekset(my_skek->data, (void *) &ZOMBIE_NUMBER, my_skek->capacity, my_skek->type_size, error);
+        free(my_skek->data);
+    #else
+        kekset(my_skek->canary_data_front, (void *) &ZOMBIE_NUMBER,
+               sizeof(long)/sizeof(char), sizeof(char), error);
+        kekset(my_skek->data, (void *) &ZOMBIE_NUMBER, my_skek->capacity, my_skek->type_size, error);
+        kekset(my_skek->canary_data_behind, (void *) &ZOMBIE_NUMBER,
+               sizeof(long)/sizeof(char), sizeof(char), error);
 
-    kekset(my_skek->data, (void *) &ZOMBIE_NUMBER, my_skek->capacity, my_skek->type_size, error);
+        free(my_skek->canary_data_front);
+        my_skek->canary_front       = ZOMBIE_NUMBER;
+        my_skek->canary_behind      = ZOMBIE_NUMBER;
+        my_skek->canary_data_front  = (void*) FREE_ERROR_POINTER;
+        my_skek->canary_data_behind = (void*) FREE_ERROR_POINTER;
+    #endif
 
-    free(my_skek->data);
     my_skek->size       = BAD_SIZE;
     my_skek->type_size  = BAD_SIZE;
     my_skek->capacity   = BAD_SIZE;
     my_skek->data       = (void *) FREE_ERROR_POINTER;
 
-//    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+//    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know")) {
 //        return false;
 //    }
 
@@ -94,13 +113,13 @@ char SkekDtor(struct Skek *my_skek, int *error) { // todo distrc for void
 }
 
 char SkekExtension(struct Skek *my_skek, int* error) {
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return false;
     }
 
     if (my_skek->size == my_skek->capacity) { // increase size
 
-        printf("\n"
+        printf("\n\x1b[32;1m"
                "_____________________________\n"
                "_____________________________\n"
                "I'm SkekExtension\n"
@@ -111,15 +130,29 @@ char SkekExtension(struct Skek *my_skek, int* error) {
                "capacity:       %ld\n"
                "will capacity:  %ld\n"
                "_____________________________\n"
-               "_____________________________\n",
+               "_____________________________\n"
+               "\x1b[0m",
                my_skek->data, my_skek->size, my_skek->type_size,
                my_skek->capacity, my_skek->capacity * FACTOR_INCR_CAPACITY);
 
         my_skek->capacity *= FACTOR_INCR_CAPACITY;
+
+        #ifdef NO_DEFENSE
         my_skek->data = (void *)realloc(my_skek->data,
                                         my_skek->capacity * my_skek->type_size);
+        #else
+        my_skek->canary_data_front = (void *) realloc(my_skek->canary_data_front,
+                                         my_skek->capacity * my_skek->type_size + 2*sizeof(long));
 
-        if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+        my_skek->data = (char *) my_skek->canary_data_front + sizeof(long);
+
+        my_skek->canary_data_behind = (char*) my_skek->data +
+                                      my_skek->capacity * my_skek->type_size;
+        kekset(my_skek->canary_data_behind, (void*) &CANARY_DATA_BEHIND,
+               1, sizeof(long), error);
+        #endif
+
+        if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
             return false;
         }
         return true;
@@ -127,7 +160,7 @@ char SkekExtension(struct Skek *my_skek, int* error) {
 
     if (my_skek->size * FACTOR_DECR_CAPACITY <= my_skek->capacity &&
         my_skek->size > (long) START_CAPACITY / FACTOR_DECR_CAPACITY) {  // decrease size
-        printf("\n"
+        printf("\n\x1b[32;1m"
                "_____________________________\n"
                "_____________________________\n"
                "I'm SkekExtension\n"
@@ -138,16 +171,30 @@ char SkekExtension(struct Skek *my_skek, int* error) {
                "capacity:       %ld\n"
                "will capacity:  %ld\n"
                "_____________________________\n"
-               "_____________________________\n",
+               "_____________________________\n"
+               "\x1b[0m",
                my_skek->data, my_skek->size, my_skek->type_size,
                my_skek->capacity, (long) my_skek->capacity / FACTOR_DECR_CAPACITY + 1);
 
 
         my_skek->capacity = (long) my_skek->capacity / FACTOR_DECR_CAPACITY + 1;
-        my_skek->data = (void *) realloc(my_skek->data,
-                                         my_skek->capacity * my_skek->type_size);
 
-        if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+        #ifdef NO_DEFENSE
+            my_skek->data = (void *) realloc(my_skek->data,
+                                         my_skek->capacity * my_skek->type_size);
+        #else
+            my_skek->canary_data_front = (void *) realloc(my_skek->canary_data_front,
+                                         my_skek->capacity * my_skek->type_size + 2*sizeof(long));
+
+            my_skek->data = (char *)my_skek->data + sizeof(long);
+
+            my_skek->canary_data_behind = (char*) my_skek->data +
+                                          my_skek->capacity * my_skek->type_size;
+            kekset(my_skek->canary_data_behind, (void*) &CANARY_DATA_BEHIND,
+                                            1, sizeof(long), error);
+        #endif
+
+        if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
             return false;
         }
         return true;
@@ -157,12 +204,12 @@ char SkekExtension(struct Skek *my_skek, int* error) {
 }
 
 void* SkekGet (struct Skek* my_skek, int* error) {
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return nullptr;
     }
     if (my_skek->size == 0) {
         *error = GET_WITHOUT_ELEM;
-        SkekDump(my_skek, error, DEB_ELEM);
+        SkekDump(my_skek, error, DEB_ELEM("GET_WITHOUT_ELEM"));
         return nullptr;
     }
 
@@ -170,11 +217,11 @@ void* SkekGet (struct Skek* my_skek, int* error) {
 
     if (top_elem == nullptr) {
         *error = NULLPTR_IN_DATA;
-        SkekDump(my_skek, error, DEB_ELEM);
+        SkekDump(my_skek, error, DEB_ELEM("NULLPTR_IN_DATA"));
         return nullptr;
     }
 
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return nullptr;
     }
     return top_elem;
@@ -182,7 +229,7 @@ void* SkekGet (struct Skek* my_skek, int* error) {
 
 
 char SkekPush(struct Skek *my_skek, void* value, int* error) {
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return false;
     }
     if (!SkekExtension(my_skek, error)) return false;
@@ -191,19 +238,23 @@ char SkekPush(struct Skek *my_skek, void* value, int* error) {
            value, 1, my_skek->type_size, error);
     my_skek->size++;
 
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+    #ifdef SECOND_DEFENSE_LAYER
+    my_skek->hash = MyHashCalc(my_skek->data, my_skek->size, error);
+    #endif
+
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return false;
     }
     return true;
 }
 
 void* SkekPop (struct Skek* my_skek, int *error) {
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return nullptr;
     }
     if (my_skek->size == 0) {
         *error = POP_WITHOUT_ELEM;
-        SkekDump(my_skek, error, DEB_ELEM);
+        SkekDump(my_skek, error, DEB_ELEM("POP_WITHOUT_ELEM"));
         return nullptr;
     }
 
@@ -213,10 +264,14 @@ void* SkekPop (struct Skek* my_skek, int *error) {
     kekset(elem, top_elem, 1,  my_skek->type_size);
     my_skek->size--;
 
+    #ifdef SECOND_DEFENSE_LAYER
+        my_skek->hash = MyHashCalc(my_skek->data, my_skek->size, error);
+    #endif
+
     if (!SkekExtension(my_skek, error)) {
         return nullptr;
     }
-    if (!SkekVerif(my_skek, error, DEB_ELEM)) {
+    if (!SkekVerif(my_skek, error, DEB_ELEM("Don't know"))) {
         return nullptr;
     }
     return elem;
@@ -226,6 +281,7 @@ char SkekVerif (struct Skek* my_skek, int* error, struct debug_elements debElem,
 
     if (my_skek == nullptr) {
         *error = NULLPTR_ON_SKEK;
+        debElem.ERROR_MESSAGE = "NULLPTR_ON_SKEK";
         SkekDump(my_skek, error, debElem, name_logfile);
         return false;
     }
@@ -236,6 +292,7 @@ char SkekVerif (struct Skek* my_skek, int* error, struct debug_elements debElem,
         my_skek->data       == (void *) FREE_ERROR_POINTER) {
 
         *error = TWICE_ALLOCATE;
+        debElem.ERROR_MESSAGE = "TWICE_ALLOCATE";
         SkekDump(my_skek, error, debElem, name_logfile);
         return false;
     }
@@ -245,15 +302,84 @@ char SkekVerif (struct Skek* my_skek, int* error, struct debug_elements debElem,
         my_skek->capacity   < 0) {
         // todo 3 if and enumb errors for this
         *error = NEGATIVE_SIZE;
+        debElem.ERROR_MESSAGE = "NEGATIVE_SIZE";
         SkekDump(my_skek, error, debElem, name_logfile);
         return false;
     }
 
+
     if (my_skek->size > my_skek->capacity) {
         *error = SIZE_LARGE_CAPACITY;
+        debElem.ERROR_MESSAGE = "SIZE_LARGE_CAPACITY";
         SkekDump(my_skek, error, debElem, name_logfile);
         return false;
     }
+
+    #ifndef NO_DEFENSE
+
+        if (my_skek->canary_front != CANARY_FRONT) {
+            *error = CANARY_FRONT_DIE;
+            debElem.ERROR_MESSAGE = "CANARY_FRONT_DIE";
+            SkekDump(my_skek, error, debElem, name_logfile);
+            printf("\n\x1b[31b"
+                   "Canary Die\n"
+                   "Name ding front canary: %lX\n\n"
+                   "\x1b[0m", my_skek->canary_front);
+            return false;
+        }
+        if (my_skek->canary_behind != CANARY_BEHIND) {
+            *error = CANARY_BEHIND_DIE;
+            debElem.ERROR_MESSAGE = "CANARY_BEHIND_DIE";
+            SkekDump(my_skek, error, debElem, name_logfile);
+            printf("\n\x1b[31b"
+                   "Canary Die\n"
+                   "Name ding behind canary: %lX\n\n"
+                   "\x1b[0m", my_skek->canary_front);
+            return false;
+        }
+
+        if (my_skek->canary_data_front != nullptr &&
+            *(long*)my_skek->canary_data_front != CANARY_DATA_FRONT) {
+            *error = CANARY_DATA_FRONT_DIE;
+            debElem.ERROR_MESSAGE = "CANARY_DATA_FRONT_DIE";
+            SkekDump(my_skek, error, debElem, name_logfile);
+            printf("\n\x1b[31b"
+                   "Canary Die\n"
+                   "Name ding front data canary: %lX\n\n"
+                   "\x1b[0m", *(long*)my_skek->canary_data_front);
+            return false;
+        }
+
+        if (my_skek->canary_data_behind != nullptr &&
+                *(long*)my_skek->canary_data_behind != CANARY_DATA_BEHIND) {
+            *error = CANARY_DATA_BEHIND_DIE;
+            debElem.ERROR_MESSAGE = "CANARY_DATA_BEHIND_DIE";
+            SkekDump(my_skek, error, debElem, name_logfile);
+            printf("\n\x1b[31b"
+                   "Canary die\n"
+                   "Name ding behind data canary: %lX\n\n"
+                   "\x1b[0m", *(long*)my_skek->canary_data_behind);
+            return false;
+        }
+
+    #endif
+    #ifdef SECOND_DEFENSE_LAYER
+        unsigned long long old_hash = my_skek->hash;
+        my_skek->hash = 0;
+        my_skek->hash = MyHashCalc(my_skek->data, my_skek->size, error);
+        if (old_hash != my_skek->hash) {
+            *error = INCONSISTENCY_HASHES;
+            debElem.ERROR_MESSAGE = "INCONSISTENCY_HASHES";
+            SkekDump(my_skek, error, debElem, name_logfile);
+            printf ("\n\x1b[31m"
+                    "BAD HASHES\n"
+                    "OLD HASH: %lld\n"
+                    "NEW HASH: %lld\n",
+                    old_hash, my_skek->hash);
+            return 0;
+        }
+    #endif
+
 
     return true;
 }
@@ -281,7 +407,7 @@ char SkekDump (struct Skek * my_skek, int *error,
     // todo define for color text
 
 
-    // block input in console (i input onlu errors skeks
+    // block input in console (i input onlu errors skeks)
     if (*error != UNDEFINED) {
 
         printf("\n\x1b[32;1m"
@@ -297,14 +423,11 @@ char SkekDump (struct Skek * my_skek, int *error,
 
         printf("\x1b[31m"
                "!!!!ERROR SKEK!!!!\n"
-               "SKEK ERROR NUMBER: %d\n That's mean: %s\n\n",
-               *error, NAME_ERRORS.at(*error));
+               "SKEK ERROR NUMBER: %d\n"
+               "That's mean: %s\n\n",
+               *error, debElem.ERROR_MESSAGE);
 
-        printf("Skek->size:        %ld\n"
-               "Skek->type_size:   %ld\n"
-               "Skek->capacity:    %ld\n"
-               "Skek->data:\n",
-               my_skek->size, my_skek->type_size, my_skek->capacity);
+        print_status_skek(my_skek, error);
 
         if (my_skek->data == nullptr ||
             my_skek->data == &FREE_ERROR_POINTER) {
@@ -319,6 +442,7 @@ char SkekDump (struct Skek * my_skek, int *error,
         printf("END ERROR SKEK\n\x1b[0m");
     }
 
+
     // block input in file
     fprintf(file,"\n"
             "TIME : %s"
@@ -332,17 +456,14 @@ char SkekDump (struct Skek * my_skek, int *error,
 
     if (*error != UNDEFINED) {
         fprintf(file,"!!!!ERROR SKEK!!!!\n"
-                     "SKEK ERROR NUMBER: %d\n That's mean: %s\n\n",
-               *error, NAME_ERRORS.at(*error));
+                     "SKEK ERROR NUMBER: %d\n"
+                     "That's mean: %s\n\n",
+               *error, debElem.ERROR_MESSAGE);
     }
 
     else fprintf(file, "NORMAL SKEK\n");
 
-    fprintf(file, "Skek->size:      %ld\n"
-           "Skek->type_size: %ld\n"
-           "Skek->capacity:  %ld\n"
-           "Skek->data:\n",
-           my_skek->size, my_skek->type_size, my_skek->capacity);
+    fprint_status_skek(my_skek, file, error);
 
     if (my_skek->data == nullptr ||
         my_skek->data == &FREE_ERROR_POINTER) {
@@ -363,22 +484,6 @@ char SkekDump (struct Skek * my_skek, int *error,
     fclose (file);
     return true;
 }
-
-char CleanLogFile (const char* name_logfile, int* error) {
-    FILE* file = fopen(name_logfile, "w");
-
-    if (file == nullptr) {
-        printf("\x1b[31;5m"
-               "ERROR: file can't input\n"
-               "Please reload program\n"
-               "\x1b[0m");
-        *error = FILE_OPEN;
-        return false;
-    }
-    fclose(file);
-    return true;
-}
-
 
 char kekset (void* ptr, void* elem, long count_elem, long type_size, int* error) {
     if (ptr == nullptr) {
@@ -404,6 +509,93 @@ char kekset (void* ptr, void* elem, long count_elem, long type_size, int* error)
     return true;
 }
 
+char CleanLogFile (const char* name_logfile, int* error) {
+    FILE* file = fopen(name_logfile, "w");
+
+    if (file == nullptr) {
+        printf("\x1b[31;5m"
+               "ERROR: file can't input\n"
+               "Please reload program\n"
+               "\x1b[0m");
+        *error = FILE_OPEN;
+        return false;
+    }
+    fclose(file);
+    return true;
+}
+
+
+char fprint_status_skek(struct Skek* my_skek, FILE* file, int* error) {
+#ifdef NO_DEFENSE
+    fprintf(file, "Skek->size:        %ld\n"
+          "Skek->type_size:   %ld\n"
+          "Skek->capacity:    %ld\n"
+          "Skek->data:\n",
+    my_skek->size, my_skek->type_size, my_skek->capacity);
+#elifdef FIRST_DEFENSE_LAYER
+    fprintf(file, "Skek->size:        %ld\n"
+         "Skek->type_size:   %ld\n"
+         "Skek->capacity:    %ld\n"
+         "Skek->canary_front:         %lX\n"
+         "Skek->canary_behind:        %lX\n"
+         "Skek->canary_data_front:    %lX\n"
+         "Skek->canary_data_behind:   %lX\n"
+         "Skek->data:\n",
+    my_skek->size, my_skek->type_size, my_skek->capacity,
+    my_skek->canary_front, my_skek->canary_behind,
+    *(long*)my_skek->canary_data_front, *(long*)my_skek->canary_data_behind);
+#else
+    fprintf(file, "Skek->size:        %ld\n"
+           "Skek->type_size:   %ld\n"
+           "Skek->capacity:    %ld\n"
+           "Skek->hash:                 %lld\n"
+           "Skek->canary_front:         %lX\n"
+           "Skek->canary_behind:        %lX\n"
+           "Skek->canary_data_front:    %lX\n"
+           "Skek->canary_data_behind:   %lX\n"
+           "Skek->data:\n",
+           my_skek->size, my_skek->type_size, my_skek->capacity,
+           my_skek->hash, my_skek->canary_front, my_skek->canary_behind,
+           *(long*)my_skek->canary_data_front, *(long*)my_skek->canary_data_behind);
+#endif
+        return true;
+}
+
+char print_status_skek (struct Skek* my_skek, int* error) {
+#ifdef NO_DEFENSE
+    printf("Skek->size:        %ld\n"
+          "Skek->type_size:   %ld\n"
+          "Skek->capacity:    %ld\n"
+          "Skek->data:\n",
+    my_skek->size, my_skek->type_size, my_skek->capacity);
+#elifdef FIRST_DEFENSE_LAYER
+    printf("Skek->size:        %ld\n"
+         "Skek->type_size:   %ld\n"
+         "Skek->capacity:    %ld\n"
+         "Skek->canary_front:         %lX\n"
+         "Skek->canary_behind:        %lX\n"
+         "Skek->canary_data_front:    %lX\n"
+         "Skek->canary_data_behind:   %lX\n"
+         "Skek->data:\n",
+    my_skek->size, my_skek->type_size, my_skek->capacity,
+    my_skek->canary_front, my_skek->canary_behind,
+    *(long*)my_skek->canary_data_front, *(long*)my_skek->canary_data_behind);
+#else
+    printf("Skek->size:        %ld\n"
+           "Skek->type_size:   %ld\n"
+           "Skek->capacity:    %ld\n"
+           "Skek->hash:                 %lld\n"
+           "Skek->canary_front:         %lX\n"
+           "Skek->canary_behind:        %lX\n"
+           "Skek->canary_data_front:    %lX\n"
+           "Skek->canary_data_behind:   %lX\n"
+           "Skek->data:\n",
+       my_skek->size, my_skek->type_size, my_skek->capacity,
+       my_skek->hash, my_skek->canary_front, my_skek->canary_behind,
+       *(long*)my_skek->canary_data_front, *(long*)my_skek->canary_data_behind);
+#endif
+    return true;
+}
 
 const char* print_void_arr(void* ptr, int type, long count_elem, long type_size) {
     if (type == 0 && type_size == sizeof(bool)) {
@@ -548,10 +740,57 @@ const char* file_print_void_arr(FILE* file, void* ptr, int type, long count_elem
 
     for (long numb_elem = 0; numb_elem < count_elem; numb_elem ++) {
         for (long numb_byte = 0; numb_byte < type_size; numb_byte ++) {
-            printf("data[%ld] = %02X",
+            fprintf(file, "data[%ld] = %02X",
                    numb_elem, *((char *) ptr + numb_elem + numb_byte));
         }
-        printf("\n");
+        fprintf(file, "\n");
     }
     return "Hex";
+}
+
+unsigned long long MyHashCalc(void* ptr, long len, int* error)
+{
+    const unsigned int m = 0x5bd1e995;
+    const unsigned int seed = 0;
+    const int r = 24;
+
+    unsigned int h = seed ^ len;
+
+    const unsigned char * data = (const unsigned char *)ptr;
+    unsigned int k;
+
+    while (len >= 4)
+    {
+        k  = data[0];
+        k |= data[1] << 8;
+        k |= data[2] << 16;
+        k |= data[3] << 24;
+
+        k *= m;
+        k ^= k >> r;
+        k *= m;
+
+        h *= m;
+        h ^= k;
+
+        data += 4;
+        len -= 4;
+    }
+
+    switch (len)
+    {
+        case 3:
+            h ^= data[2] << 16;
+        case 2:
+            h ^= data[1] << 8;
+        case 1:
+            h ^= data[0];
+            h *= m;
+    };
+
+    h ^= h >> 13;
+    h *= m;
+    h ^= h >> 15;
+
+    return h;
 }

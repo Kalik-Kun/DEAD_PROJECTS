@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++14 -o CMakeFiles/Stack.dir/main.cpp.o -c /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/main.cpp",
+  "file": "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/main.cpp"
+},
+{
+  "directory": "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++14 -o CMakeFiles/Stack.dir/LibStack.cpp.o -c /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.cpp",
+  "file": "/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.cpp"
+}
+]

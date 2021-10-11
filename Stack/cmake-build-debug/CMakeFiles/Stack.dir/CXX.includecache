@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.cpp
-LibStack.h
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.h
-
 /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.h
 iostream
 -
@@ -25,4 +21,8 @@ time.h
 -
 map
 -
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/main.cpp
+LibStack.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.h
 

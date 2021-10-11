@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/assembler.dir/main.cpp.o CMakeFiles/assembler.dir/Assembler.cpp.o -o assembler  -l../Stack/cmake-build-debug/libLibStack.a 

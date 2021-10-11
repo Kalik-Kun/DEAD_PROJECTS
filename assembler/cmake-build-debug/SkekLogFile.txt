@@ -1,0 +1,26 @@
+
+TIME : Mon Oct 11 22:53:51 2021
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/assembler/Skek/LibStack.cpp
+FUNC: char SkekCtor(Skek*, long int, long int, int*)
+LINE: 39
+
+!!!!ERROR SKEK!!!!
+SKEK ERROR NUMBER: 3
+That's mean: STACK_ALREADY_CREATED
+
+Skek->size:        0
+Skek->type_size:   1
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: char
+END ERROR SKEK
+END DUMB
+
