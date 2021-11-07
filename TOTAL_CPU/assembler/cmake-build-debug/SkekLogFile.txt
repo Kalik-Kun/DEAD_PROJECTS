@@ -1,0 +1,24 @@
+
+TIME : Sun Nov  7 08:34:21 2021
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/assembler/Assembler.cpp
+FUNC: bool ASMDump(myarr*, arr_bit_str*, const char*, CPU_ERRORS*)
+LINE: 790
+
+NORMAL SKEK
+MESSAGE: ASM_DUMP
+Skek->size:        0
+Skek->type_size:   24
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+

@@ -2,6 +2,9 @@
 // Created by arlik_null on 14.09.2021.
 //
 
+#ifndef LIB_STRING_H
+#define LIB_STRING_H
+
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,6 +13,7 @@
 #include <iostream>
 #include <sys/stat.h>
 #include <assert.h>
+#include <math.h>
 #define DEBAG      printf("\ndebag\n");
 
 // This is one string
@@ -21,6 +25,7 @@ struct mystr {
 // array pointers on my string
 struct myarr {
     void* buff;
+    size_t size_buffer = 0;
     struct mystr* arr;
     size_t size;
 };
@@ -55,21 +60,43 @@ void            unit_test_my_quick_sort         (struct myarr);                 
 void            unit_test_reverse_my_quick_sort (struct myarr);                 // reverse my quick sort test
 
 // help func
+
 void            swap_mystr                      (struct mystr*, struct mystr*); // swap string
-void            copy_string                     (struct mystr*, struct mystr*); // copy second string in first input string (also allocate memory for first string)
-void            copy_arr_string                 (struct myarr*, struct myarr*); // copy second array of string in first input arr_of_string (also allocate memory for first string)
+
+// copy second string in first input string (allocate memory for first string)
+char            copy_string                     (struct mystr**, struct mystr*);
+
+// copy second array of string in first input arr_of_string (allocate memory for first arr string)
+void            copy_arr_string                 (struct myarr**, struct myarr*);
 size_t          out_file_size                   (const char *);                 // return size of file(inout name file in const char*
-size_t          find_count_elems                (char* , const char);           // to count amount of input simb in inout strung
-void            print_array                     (struct myarr);                 // print final array
+size_t          find_count_elems                (const char* , const char);           // to count amount of input simb in inout strung
+void            print_array                     (struct myarr*);                 // print final array
 void            print_array_on_file             (struct myarr*, const char*);   // print sorted array in file
 void            reverse_mystr                   (struct mystr*);                // reverse input string
 char            is_it_letter                    (const char);                   // checks a character for a letter return true if it is letter else false
+
+/// Convert letter to digit
+/// \param symb - input symbol
+/// \return digit or -1 if symb don't be a digit or -2 if this is a point
+int             letter_to_digit                 (const char symb);
+
+/// Convert input string into DOUBLE number
+/// \param str          - input string
+/// \param output_numb  - buffer for DOUBLE number where the new number is written.
+/// \return True if operation successfully ot false if string - isn't DOUBLE number
+char            string_to_number                (const char* str, double* output_numb);
+
+/// Convert input string into INTEGER number
+/// \param str          - input string
+/// \param output_numb  - buffer for INTEGER number where the new number is written.
+/// \return True if operation successfully ot false if string - isn't INTEGER number
+char            string_to_number                (const char* str, int* output_numb);
+
 template <typename type>
 void            my_swap                         (type* , type* );               // swap all type elements
 void            print_arr_left_to_right         (struct mystr*, size_t, size_t);// print array in certain interval (left ot right) with broader
 void            cleaning_file_and_record        (const char*, const char*);     // enter: inout_file, file (whose will be clean) func clean files and is recording them on second const char
 struct mystr    clean                           (const char*, const long);      // cleans files from extra spaces, etc.
-
 
 
 
@@ -81,4 +108,5 @@ void my_swap(type* a, type* b) {
     *b = c;
 }
 
+#endif
 

@@ -51,7 +51,7 @@ LINE: -1
 
 !!!!ERROR SKEK!!!!
 SKEK ERROR NUMBER: 12
-That's mean: CANARY_DATA_FRONT_DIE
+That's mean: CANARY_DATA_FRONT_DIE_SKEK
 
 Skek->size:        20
 Skek->type_size:   4

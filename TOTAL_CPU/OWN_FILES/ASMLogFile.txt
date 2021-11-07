@@ -1,0 +1,16 @@
+START DUMP
+COMMANDS                  BIT_FORM
+PUSH [[3] + [KEK5]]       data[0] = 030810080203000000080405
+PUSH [9] + [5 + 7] + [KEK5] data[1] = 031008020900000010081002050000000207000000080405
+POP                       data[2] = 0401
+POP KEK1 + [3 + 2] + [[23] + KEK5 + 32] data[3] = 041004011008100203000000020200000008100802170000001004050220000000
+IN                        data[4] = 0501
+IN [12] + KEK3 + 5        data[5] = 051008020C0000001004030205000000
+ADD                       data[6] = 07
+SUB                       data[7] = 08
+MULT                      data[8] = 09
+DIV                       data[9] = 0A
+RESET                     data[10] = 02
+END                       data[11] = 01
+(null)                    data[0] = 
+END DUMP

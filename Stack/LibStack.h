@@ -21,49 +21,51 @@
 // errors lib
 enum {
     // own for lib
-    UNDEFINED,
+    UNDEFINED_SKEK,
 
     // func skek erros
     NULLPTR_ON_SKEK,
     SIZE_LARGE_CAPACITY,
     STACK_ALREADY_CREATED,
-    ERROR_ALLOCATE_MEMORY,
-    GET_WITHOUT_ELEM,
-    POP_WITHOUT_ELEM,
-    TWICE_ALLOCATE,
-    NEGATIVE_SIZE,
-    NULLPTR_IN_DATA,
-    CANARY_FRONT_DIE,
-    CANARY_BEHIND_DIE,
-    CANARY_DATA_FRONT_DIE,
-    CANARY_DATA_BEHIND_DIE,
-    INCONSISTENCY_HASHES,
+    ERROR_ALLOCATE_MEMORY_SKEK,
+    GET_WITHOUT_ELEM_SKEK,
+    POP_WITHOUT_ELEM_SKEK,
+    TWICE_ALLOCATE_IN_SKEK,
+    NEGATIVE_SIZE_SKEK,
+    NULLPTR_IN_DATA_SKEK,
+    CANARY_FRONT_DIE_SKEK,
+    CANARY_BEHIND_DIE_SKEK,
+    CANARY_DATA_FRONT_DIE_SKEK,
+    CANARY_DATA_BEHIND_DIE_SKEK,
+    INCONSISTENCY_HASHES_IN_SKEK,
+    NULLPTR_ON_BUFFER_SKEK,
+    NULLPTR_IN_REALOC_SKEK,
 
     // kekset erros
-    NULLPTR_ARRAY,
-    NULLPTR_ELEM,
+    NULLPTR_ARRAY_KEKSET,
+    NULLPTR_ELEM_KEKSET,
 
     // file errors
-    FILE_OPEN,
+    FILE_OPEN_SKEK,
 
 
 };
 
 /// DEFENSE
-/*
+/**
  * Showing program defense level
  *   NO_DEFENSE             - Program haven't defense
  *   FIRST_DEFENSE_LAYER    - Program have canary defence
  *   SECOND_DEFENSE_LAYER   - Program have hash and canary defence
- */
+ **/
 //#define NO_DEFENSE
 //#define FIRST_DEFENSE_LAYER
 #define SECOND_DEFENSE_LAYER
 
             /// CONSTS
-// if skek->data have ptr 0x(FREE_ERROR_POINTER) that TWICE_ALLOCATE
+// if skek->data have ptr 0x(FREE_ERROR_POINTER) that TWICE_ALLOCATE_IN_SKEK
 extern const char FREE_ERROR_POINTER;
-// if skek->data have ptr 0x(FREE_ERROR_POINTER) that TWICE_ALLOCATE
+// if skek->data have ptr 0x(FREE_ERROR_POINTER) that TWICE_ALLOCATE_IN_SKEK
 // (ZOMBIE_NUMBER) fill skek->data when skek was deleted
 extern const char ZOMBIE_NUMBER;
 // BAD_SIZE - size when skek was deleted
@@ -77,7 +79,7 @@ extern const long  CANARY_DATA_BEHIND;
 extern long        START_CAPACITY;
 // type size with skek started
 extern long        START_SIZE_TYPE;
-// UNDEFINED error if func havn't error
+// UNDEFINED_SKEK error if func havn't error
 extern int         ERR_UNDEFINED;
 // factor when capacity increase
 extern const int   FACTOR_INCR_CAPACITY;
@@ -97,7 +99,7 @@ extern const char* LOGFILE_NAME;
 extern const int   PRINT_TYPE;
 
 
-/* debug elements - elem which show info about called func
+/** debug elements - elem which show info about called func
  *  LINE - From which LINE the dump was called
  *  FILE - From which FILE the dump was called
  *  PRETTY_FUNCTION - From which FUNC the dump was called
@@ -105,7 +107,7 @@ extern const int   PRINT_TYPE;
  *
  *  P.S.
  *  USE __ after and before name that give this param
- */
+ **/
 struct debug_elements {
     int LINE                     = -1;
     const char* FILE             = "Don't know";
@@ -113,13 +115,13 @@ struct debug_elements {
     const char* ERROR_MESSAGE    = "Don't know";
 };
 
-/*
+/**
  * Struct Skek - specific struct for anything type elems
  * data      - ptr on start memory where allocate data
  * type_size - size of type file in byte
  * size      - numbers elements
  * capacity  -  amount of allocated memory
-*/
+**/
 struct Skek {
     #ifndef NO_DEFENSE
     long  canary_front          = CANARY_FRONT;
@@ -172,9 +174,10 @@ char SkekExtension (struct Skek * my_skek, int* error = &ERR_UNDEFINED);
 
 /// Get value of top
 /// \param my_skek - pointer on your skek
+/// \param buffer  - buffer for output value
 /// \param error   - errors
-/// \return return pointer on yop element of skek
-void* SkekGet      (struct Skek * my_skek, int* error = &ERR_UNDEFINED);
+/// \return True if operation successfully or False if not
+char SkekGet      (struct Skek * my_skek, void* buffer, int* error = &ERR_UNDEFINED);
 
 /// Push value of top Skek
 /// \param my_skek - pointer on your skek
@@ -185,9 +188,10 @@ char SkekPush      (struct Skek * my_skek, void* elem, int* error = &ERR_UNDEFIN
 
 /// Delete element in top Skek
 /// \param my_skek - pointer on your skek
+/// \param buff    - buffer for output element
 /// \param error   - errors
-/// \return Return pointer on top elem whose deleted and allocate memory for this element
-void* SkekPop      (struct Skek* my_skek, int* error = &ERR_UNDEFINED);
+/// \return True if operation successfully or False if not
+char SkekPop      (struct Skek* my_skek, void* buff, int* error = &ERR_UNDEFINED);
 
 /// Verificator use for find errors in stack
 /// \param my_skek       - pointer on your skek
@@ -200,10 +204,15 @@ char SkekVerif     (struct Skek* my_skek, int* error = &ERR_UNDEFINED,
 
 // help func for Skek
 
+/// Check for skek removal
+/// \param my_skek - pointer on skek
+/// \return True if Skek deleted else False
+char CheckRemSkek (struct Skek* my_skek);
+
 /// kekset - fills byte memory with one element, started from ptr to count_elem * type_size\n\n
 /// kekset (void* ptr, void* elem, long count_elem, long type_size, StkError error)\n
 ///         ptr        - pointer on start,\n
-///         elem       - elem whose filled memory,\n
+///         elem       - pointer elem which memory should be fiiled/\n
 ///         count_elem - count elem with size in bytes: type_size\n
 ///         type_size  - size type of input element, error - error variable.\n
 /// ELEM MUST BE ALLOCATED\n
@@ -228,8 +237,8 @@ char kekset        (void* ptr, void* elem,
 /// You need to clean logfile all time than you program is completed\n
 /// Use func CleanLogFile() for this\n\n
 // todo use html not txt for output logfile
-char SkekDump      (struct Skek* my_skek, int* error = &ERR_UNDEFINED,
-                    struct debug_elements debugElements = {}, const char* name_logfile = LOGFILE_NAME);
+char SkekDump      (struct Skek* my_skek, struct debug_elements debugElements = {},
+                    const char* name_logfile = LOGFILE_NAME,  int* error = &ERR_UNDEFINED);
 
 /// CleanLofFile - clean input log file\n
 /// CleanLogFile  (const char* name_logfile = LOGFILE_NAME, int* errors = &ERR_UNDEFINED)\n

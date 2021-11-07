@@ -1,0 +1,27 @@
+START DUMP
+COMMANDS                  BIT_FORM
+PUSH 1                    data[0] = 030201000000
+PUSH 2                    data[1] = 030202000000
+PUSH 3                    data[2] = 030203000000
+PUSH 4                    data[3] = 030204000000
+PUSH 5                    data[4] = 030205000000
+PUSH 6                    data[5] = 030206000000
+POP KEK0 + 1              data[6] = 042008000201000000
+POP KEK1                  data[7] = 040801
+POP KEK2                  data[8] = 040802
+POP [1]                   data[9] = 04100201000000
+POP [2]                   data[10] = 04100202000000
+POP [3]                   data[11] = 04100203000000
+OUT KEK0                  data[12] = 060800
+OUT KEK1                  data[13] = 060801
+OUT KEK2                  data[14] = 060802
+OUT [1]                   data[15] = 06100201000000
+OUT [2]                   data[16] = 06100202000000
+OUT [3]                   data[17] = 06100203000000
+END                       data[18] = 01
+(null)                    data[19] = 
+
+MARK BUFFER:
+NAME                      BYTE_POS
+
+END DUMP

@@ -1,0 +1,15 @@
+PUSH 3
+:end
+PUSH :hue + :end + :fndv + :df + :142 + :3ef
+:hue
+PUSH :hue
+:fndv
+PUSH :hue
+:df
+PUSH :hue
+:142
+PUSH :hue
+:3ef
+LEAP :end
+PUSH :hue
+END

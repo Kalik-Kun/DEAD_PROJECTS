@@ -1,0 +1,2 @@
+/usr/bin/ar qc libKalikHelp.a CMakeFiles/KalikHelp.dir/libHelpKalik.cpp.o
+/usr/bin/ranlib libKalikHelp.a

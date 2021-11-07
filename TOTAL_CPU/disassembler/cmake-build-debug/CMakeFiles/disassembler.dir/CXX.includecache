@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../../Onegin/MyLibString.h
+time.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+assert.h
+-
+iostream
+-
+sys/stat.h
+-
+assert.h
+-
+math.h
+-
+
+../../LibKalikHelp/libHelpKalik.h
+cstdio
+-
+climits
+-
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/disassembler/Disassembler.cpp
+Disassembler.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/disassembler/Disassembler.h
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/disassembler/Disassembler.h
+MyLibString.h
+-
+libHelpKalik.h
+-
+

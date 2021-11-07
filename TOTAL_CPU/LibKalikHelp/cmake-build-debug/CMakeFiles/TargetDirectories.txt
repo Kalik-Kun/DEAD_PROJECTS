@@ -1,0 +1,3 @@
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/LibKalikHelp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/LibKalikHelp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/LibKalikHelp/cmake-build-debug/CMakeFiles/KalikHelp.dir

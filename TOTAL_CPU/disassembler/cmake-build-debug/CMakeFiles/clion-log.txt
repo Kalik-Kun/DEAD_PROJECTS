@@ -1,0 +1,4 @@
+/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/disassembler
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/disassembler/cmake-build-debug

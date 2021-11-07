@@ -37,20 +37,20 @@ struct myarr file_reading(FILE* fp, const char* name_file) {
     char *buff = nullptr;
     size_t size_file = out_file_size(name_file);
 
-    buff = (char*) calloc(size_file + 1, sizeof(char));
+    buff = (char*) calloc(size_file, sizeof(char));
     fread(buff, sizeof(char), size_file, fp);
 
-    size_t count_line = find_count_elems(buff, '\n');
+    size_t count_line = find_count_elems(buff, '\n') + 1;
 
-    // todo virtalspace
-    arr_string = (struct mystr *) calloc(count_line + 1, sizeof(struct mystr));
+
+    arr_string = (struct mystr *) calloc(count_line, sizeof(struct mystr));
 
     arr_string[0].str = buff;
     arr_string[0].len = strchr(buff, '\n') - buff;
     number_line = 1;
 
     for (char* str_line_pointer = strchr(buff, '\n');
-         str_line_pointer != nullptr && number_line < count_line + 1;
+         str_line_pointer != nullptr && number_line < count_line;
          str_line_pointer = strchr(str_line_pointer + 1, '\n')) {
 
         *str_line_pointer = '\0';
@@ -64,18 +64,11 @@ struct myarr file_reading(FILE* fp, const char* name_file) {
 
         number_line++;
     }
-    return {buff, arr_string,count_line};
+    return {buff, size_file, arr_string, count_line};
 }
 
 void free_memory_for_string_array (struct myarr* arr_string) {
-    assert(arr_string->arr);
-//    if (!arr_string->arr) return;
-
-    for (size_t i = 0; i < arr_string->arr->len; i++) {
-        if (arr_string->arr[i].str) free(arr_string->arr[i].str);
-    }
-    // i don't know how cleaning memory because i use buffer and pointer on buffer in arr_string in first string
-    assert(arr_string->arr);
+    free(arr_string->buff);
     free(arr_string->arr);
 }
 
@@ -126,14 +119,14 @@ void quick_sort_arr_string (struct mystr* arr_string, size_t left, size_t right)
         return;
     }
     size_t l = left, r = right;
-    struct mystr support_elem = {};
+    struct mystr* support_elem = nullptr;
 
     copy_string(&support_elem, &arr_string[(size_t) (left + right) / 2]);
 
     while (l <= r) {
 //        printf("%s, %s\n", arr_string[l].str, arr_string[r].str);
-        while (comp(&support_elem, &arr_string[l]) == 1 && (l <= r)) l++;
-        while (comp(&arr_string[r], &support_elem) == 1 && (l <= r)) r--;
+        while (comp(support_elem, &arr_string[l]) == 1 && (l <= r)) l++;
+        while (comp(&arr_string[r], support_elem) == 1 && (l <= r)) r--;
 
         if (l <= r) {
             swap_mystr(&arr_string[l], &arr_string[r]);
@@ -157,7 +150,7 @@ void quick_sort_arr_string (struct mystr* arr_string, size_t left, size_t right)
 //    print_arr_left_to_right(arr_string, 0, 10);
 //    printf("END\n\n");
 
-    free(support_elem.str);
+    free(support_elem->str);
 
     quick_sort_arr_string(arr_string, left, r);
     quick_sort_arr_string(arr_string, l, right);
@@ -176,13 +169,13 @@ void quick_sort_reverse_arr_string (struct mystr* arr_string, size_t left, size_
     }
 
     size_t l = left, r = right;
-    struct mystr support_elem = {};
+    struct mystr* support_elem = nullptr;
     copy_string(&support_elem, &arr_string[(size_t) (left + right) / 2]);
 
     while (l <= r) {
 //        printf("%s, %s\n", arr_string[l].str, arr_string[r].str);
-        while (comp_reverse(&support_elem, &arr_string[l]) == 1 && (l <= r)) l++;
-        while (comp_reverse(&arr_string[r], &support_elem) == 1 && (l <= r)) r--;
+        while (comp_reverse(support_elem, &arr_string[l]) == 1 && (l <= r)) l++;
+        while (comp_reverse(&arr_string[r], support_elem) == 1 && (l <= r)) r--;
         if (l <= r) {
             swap_mystr(&arr_string[l], &arr_string[r]);
             l++;
@@ -190,7 +183,7 @@ void quick_sort_reverse_arr_string (struct mystr* arr_string, size_t left, size_
         }
     }
 
-    free(support_elem.str);
+    free(support_elem->str);
 
     quick_sort_reverse_arr_string(arr_string, left, r);
     quick_sort_reverse_arr_string(arr_string, l, right);
@@ -318,7 +311,7 @@ void unit_test_bubble_sort(struct myarr arr) {
     int wrong_num = 0;
 
     struct myarr arr_bubble = arr;
-    struct myarr arr_qsort  = {};
+    struct myarr* arr_qsort  = nullptr;
 
     copy_arr_string(&arr_qsort, &arr);
 
@@ -328,17 +321,17 @@ void unit_test_bubble_sort(struct myarr arr) {
     time_bubble_sort = time_after_bubble_sort - time_before_bubble_sort;
 
     time_before_quick_sort = time(0);
-    qsort(arr_qsort.arr, arr_qsort.size, sizeof (struct mystr), comp_qsort);
+    qsort(arr_qsort->arr, arr_qsort->size, sizeof (struct mystr), comp_qsort);
     time_after_quick_sort = time(0);
     time_quick_sort = time_after_quick_sort - time_before_quick_sort;
 
     for (int i = 0; i < arr.size; i ++) {
-        if(comp(&arr_qsort.arr[i], &arr_bubble.arr[i])) {
+        if(comp(&arr_qsort->arr[i], &arr_bubble.arr[i])) {
             printf("numb error: %d\n"
-                   "line: %d\n"
+                   "byte_pos: %d\n"
                    "qsort string: %s\n"
                    "bubble string: %s\n",
-                   ++wrong_num, i, arr_qsort.arr[i].str, arr_bubble.arr[i].str);
+                   ++wrong_num, i, arr_qsort->arr[i].str, arr_bubble.arr[i].str);
         }
     }
 
@@ -348,7 +341,7 @@ void unit_test_bubble_sort(struct myarr arr) {
     if (wrong_num == 0) printf("SUCCESSFUL COMPLETED\n");
     else                printf("Num wrongs: %d\n\n", wrong_num);
 
-    free_memory_for_string_array(&arr_qsort); // because copy_string allocate memory
+    free_memory_for_string_array(arr_qsort); // because copy_string allocate memory
 }
 
 void unit_test_reverse_bubble_sort(struct myarr arr) {
@@ -362,7 +355,7 @@ void unit_test_reverse_bubble_sort(struct myarr arr) {
     int wrong_num = 0;
 
     struct myarr arr_bubble = arr;
-    struct myarr arr_qsort  = {};
+    struct myarr* arr_qsort = nullptr;
 
     copy_arr_string(&arr_qsort, &arr);
 
@@ -372,17 +365,17 @@ void unit_test_reverse_bubble_sort(struct myarr arr) {
     time_revers_bubble_sort = time_after_revers_bubble_sort - time_before_revers_bubble_sort;
 
     time_before_revers_quick_sort = time(0);
-    qsort(arr_qsort.arr, arr_qsort.size, sizeof (struct mystr), comp_qsort_reverse);
+    qsort(arr_qsort->arr, arr_qsort->size, sizeof (struct mystr), comp_qsort_reverse);
     time_after_revers_quick_sort = time(0);
     time_revers_quick_sort = time_after_revers_quick_sort - time_before_revers_quick_sort;
 
     for (int i = 0; i < arr.size; i ++) {
-        if(comp(&arr_qsort.arr[i], &arr_bubble.arr[i])) {
+        if(comp(&arr_qsort->arr[i], &arr_bubble.arr[i])) {
             printf("numb error: %d\n"
-                   "line: %d\n"
+                   "byte_pos: %d\n"
                    "qsort reverse string: %s\n"
                    "bubble reverse string: %s\n",
-                   ++wrong_num, i, arr_qsort.arr[i].str, arr_bubble.arr[i].str);
+                   ++wrong_num, i, arr_qsort->arr[i].str, arr_bubble.arr[i].str);
         }
     }
     printf("Time reverse bubble sort: %d\n"
@@ -392,7 +385,7 @@ void unit_test_reverse_bubble_sort(struct myarr arr) {
     else                printf("Num wrongs: %d\n\n", wrong_num);
 
 
-    free_memory_for_string_array(&arr_qsort);
+    free_memory_for_string_array(arr_qsort);
 }
 
 void unit_test_my_quick_sort (struct myarr arr) {
@@ -406,7 +399,7 @@ void unit_test_my_quick_sort (struct myarr arr) {
     int wrong_num = 0;
 
     struct myarr arr_my_qsort = arr;
-    struct myarr arr_qsort    = {};
+    struct myarr* arr_qsort    = nullptr;
 
     copy_arr_string(&arr_qsort, &arr);
 
@@ -416,19 +409,19 @@ void unit_test_my_quick_sort (struct myarr arr) {
     time_my_quick_sort = time_after_my_quick_sort - time_before_my_quick_sort;
 
     time_before_quick_sort  = time(0);
-    qsort(arr_qsort.arr, arr_qsort.size, sizeof (struct mystr), comp_qsort);
+    qsort(arr_qsort->arr, arr_qsort->size, sizeof (struct mystr), comp_qsort);
     time_after_quick_sort = time(0);
     time_quick_sort = time_after_quick_sort - time_before_quick_sort;
 
 
     for (int i = 0; i < arr.size; i ++) {
         // todo when i use strcmp i have 222 errors i don't know why(ends of copy strings have random simbols) with my compare all ok
-        if(comp(&arr_qsort.arr[i], &arr_my_qsort.arr[i])) {
+        if(comp(&arr_qsort->arr[i], &arr_my_qsort.arr[i])) {
             printf("numb error: %d\n"
-                    "line: %d\n"
+                    "byte_pos: %d\n"
                     "qsort string: %s\n"
                     "my qsort string: %s\n",
-                    ++wrong_num, i, arr_qsort.arr[i].str, arr_my_qsort.arr[i].str);
+                    ++wrong_num, i, arr_qsort->arr[i].str, arr_my_qsort.arr[i].str);
         }
     }
 
@@ -438,7 +431,7 @@ void unit_test_my_quick_sort (struct myarr arr) {
     if (wrong_num == 0) printf("SUCCESSFUL COMPLETED\n");
     else                printf("Num wrongs: %d\n\n", wrong_num);
 
-    free_memory_for_string_array(&arr_qsort); //because copy_string allocate new memmory
+    free_memory_for_string_array(arr_qsort); //because copy_string allocate new memmory
 }
 
 void unit_test_reverse_my_quick_sort (struct myarr arr) {
@@ -452,7 +445,7 @@ void unit_test_reverse_my_quick_sort (struct myarr arr) {
     int wrong_num = 0;
 
     struct myarr arr_my_qsort = arr;
-    struct myarr arr_qsort    = {};
+    struct myarr* arr_qsort    = nullptr;
 
     copy_arr_string(&arr_qsort, &arr);
 
@@ -462,17 +455,17 @@ void unit_test_reverse_my_quick_sort (struct myarr arr) {
     time_revers_my_qsort_sort = time_after_revers_my_qsort_sort - time_before_revers_my_qsort_sort;
 
     time_before_revers_quick_sort = time(0);
-    qsort(arr_qsort.arr, arr_qsort.size, sizeof (struct mystr), comp_qsort_reverse);
+    qsort(arr_qsort->arr, arr_qsort->size, sizeof (struct mystr), comp_qsort_reverse);
     time_after_revers_quick_sort = time(0);
     time_revers_quick_sort = time_after_revers_quick_sort - time_before_revers_quick_sort;
 
     for (int i = 0; i < arr.size; i ++) {
-        if(comp(&arr_qsort.arr[i], &arr_my_qsort.arr[i])) {
+        if(comp(&arr_qsort->arr[i], &arr_my_qsort.arr[i])) {
             printf("numb error: %d\n"
-                   "line: %d\n"
+                   "byte_pos: %d\n"
                    "qsort reverse string: %s\n"
                    "my qsort reverse string: %s\n",
-                   ++wrong_num, i, arr_qsort.arr[i].str, arr_my_qsort.arr[i].str);
+                   ++wrong_num, i, arr_qsort->arr[i].str, arr_my_qsort.arr[i].str);
         }
     }
     printf("Time mu quick sort: %d\n"
@@ -482,7 +475,7 @@ void unit_test_reverse_my_quick_sort (struct myarr arr) {
     else                printf("Num wrongs: %d\n\n", wrong_num);
 
 
-    free_memory_for_string_array(&arr_qsort);
+    free_memory_for_string_array(arr_qsort);
 }
 
 
@@ -493,22 +486,43 @@ void swap_mystr(struct mystr* str1, struct mystr* str2) {
     *str2 = str3;
 }
 
-void copy_string(struct mystr* str1, struct mystr* str2) {
-    str1->str = (char *)calloc(str2->len, sizeof(char));
-    str1->len = str2->len;
+char copy_string(struct mystr** str1, struct mystr* str2) {
+    (*str1)->str = (char *)calloc(str2->len, sizeof(char));
+    (*str1)->len = str2->len;
 
     for (size_t i = 0; i < str2->len; i ++) {
-        str1->str[i] = str2->str[i];
+        (*str1)->str[i] = str2->str[i];
     }
+
+    return true;
 }
 
-void copy_arr_string(struct myarr* arr1,  struct myarr* arr2) {
-    arr1->arr = (struct mystr *)calloc(arr2->size, sizeof(struct mystr));
-    arr1->size = arr2->size;
+void copy_arr_string(struct myarr** arr1,  struct myarr* arr2) {
+    *arr1       = (struct myarr *)calloc(1, sizeof(struct myarr));
 
-    for (size_t i = 0; i < arr2->size; i ++) {
-        copy_string(&arr1->arr[i], &arr2->arr[i]);
+    (*arr1)->buff = (void *)calloc(arr2->size_buffer, sizeof(char));
+    (*arr1)->size_buffer = arr2->size_buffer;
+
+    (*arr1)->arr = (struct mystr *)calloc(arr2->size, sizeof(struct mystr));
+    (*arr1)->size = arr2->size;
+
+    (*arr1)->arr[0].str = (char*)(*arr1)->buff;
+    (*arr1)->arr[0].len = arr2->arr[0].len;
+    *((char*)(*arr1)->buff) = *((char*)arr2->buff);
+
+    for (size_t i = 1, num_line = 1; i < arr2->size_buffer; i ++) {
+        if (*((char*)(*arr1)->buff + i - 1) == '\0') {
+            (*arr1)->arr[num_line].str = (char*)(*arr1)->buff + i;
+            (*arr1)->arr[num_line].len = arr2->arr[num_line].len;
+            num_line++;
+        }
+        *((char*)(*arr1)->buff + i) = *((char*)arr2->buff + i);
     }
+
+//    for (int i = 0; i < arr1->size; i ++) {
+//        printf("%s %zu\n", arr1->arr[i].str, arr1->arr[i].len);
+//    }
+
 }
 
 size_t out_file_size (const char* filename) {
@@ -517,7 +531,7 @@ size_t out_file_size (const char* filename) {
     return stat_file.st_size;
 }
 
-size_t find_count_elems (char* string, const char elem) {
+size_t find_count_elems (const char* string, const char elem) {
     size_t count_lenght = 0;
     for (size_t i = 0; string[i] != '\0'; i++)
         if (string[i] == elem)
@@ -526,11 +540,11 @@ size_t find_count_elems (char* string, const char elem) {
     return count_lenght;
 }
 
-void print_array(struct myarr arr) {
-    printf("size array: %ld\n", arr.size);
+void print_array(struct myarr* arr) {
+    printf("size array: %ld\n", arr->size);
 
-    for (long i = 0; i < arr.size; i ++) {
-        printf("%s\n", arr.arr[i].str);
+    for (long i = 0; i < arr->size; i ++) {
+        printf("%s\n", arr->arr[i].str);
     }
 }
 
@@ -566,6 +580,95 @@ char is_it_letter (const char simb) {
     }
 
     return false;
+}
+
+int letter_to_digit (const char simb) {
+    if (simb >= '0' && simb <= '9') return simb - '0';
+    if (simb == '.')                return -2;
+    else                            return -1;
+}
+
+char string_to_number(const char* str, double* output_numb) {
+    if (strchr(str, '.') != nullptr &&
+        strchr(str, '.') != str) {
+
+        bool minus_flag = false;
+        int i = 0;
+
+        if (str[i] == '+') i++;
+        if (str[i] == '-') {
+            minus_flag = true;
+            i++;
+        }
+
+        double number = 0;
+        int digit =  letter_to_digit(str[i]);
+        if (digit == -1) return false;
+        number += digit;
+        i++;
+
+        for (; str + i != strchr(str, '.'); i++) {
+            digit =  letter_to_digit(str[i]);
+            if (digit == -1) return false;
+            if (digit == -2) break;
+            number *= 10;
+            number += digit;
+        }
+
+        i++;
+        if (str[i] == '\0') {
+            if (minus_flag) number *= -1;
+            *output_numb = number;
+            return true;
+        }
+
+        double fract = 0.1;
+        digit = letter_to_digit(str[i++]);
+        number += fract * digit;
+
+        for (; str[i] != '\0'; i++) {
+            digit = letter_to_digit(str[i]);
+            if (digit == -1) return false;
+            fract /= 10;
+            number += fract * digit;
+        }
+        if (minus_flag) number *= -1;
+        *output_numb = number;
+        return true;
+    }
+    else
+        return false;
+}
+
+char string_to_number(const char* str, int* output_numb) {
+
+    int i = 0;
+
+    bool minus_flag = false;
+    if (str[i] == '+') i++;
+    if (str[i] == '-') {
+        minus_flag = true;
+        i++;
+    }
+
+    int number = 0;
+    int digit =  letter_to_digit(str[i]);
+    if (digit == -1) return false;
+    number += digit;
+    i++;
+
+    for (; str[i] != '\0'; i ++) {
+        digit = letter_to_digit(str[i]);
+        if (digit == -1) return false;
+        if (digit == -2) return false;
+
+        number *= 10;
+        number += digit;
+    }
+
+    if (minus_flag) number *= -1;
+    *output_numb = number;
+    return true;
 }
 
 void print_arr_left_to_right (struct mystr* arr, size_t left, size_t right) {

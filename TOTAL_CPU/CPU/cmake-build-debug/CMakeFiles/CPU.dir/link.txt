@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/CPU.dir/main.cpp.o CMakeFiles/CPU.dir/LibProc.cpp.o CMakeFiles/CPU.dir/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.cpp.o CMakeFiles/CPU.dir/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/MyLibString.cpp.o CMakeFiles/CPU.dir/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/LibKalikHelp/libHelpKalik.cpp.o -o CPU 
