@@ -113,7 +113,7 @@ enum ASM_COMMANDS {
     CMD_DIV,
     // JUMP
     CMD_LEAP,
-    
+
     // UNDEFINED_SKEK
     CMD_UND = CHAR_MAX,
 };
