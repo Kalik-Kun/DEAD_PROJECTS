@@ -1,0 +1,3165 @@
+
+TIME : Wed Jan  5 19:20:53 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:53 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:53 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 3914231485
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 00000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:53 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 01000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 1064395160
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 02000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 3533626746
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 03000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 9299090
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 04000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 3026825932
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 05000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 733061435
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 06000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 3669335521
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 07000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 3329505199
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 08000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 1758553497
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 09000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 2005651181
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 0A000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 3027411957
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 0B000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 961143728
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 0C000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 289020115
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 0D000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 1972400919
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 0E000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 2752160935
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 0F000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 1378749992
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 10000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 508253410
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 11000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 2238716243
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 12000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 3904680295
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 13000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        1
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 556438029
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+data[0] = 14000000
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+
+
+TIME : Wed Jan  5 19:20:56 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+FUNC: bool CPUDump(CPU*, const char*, CPU_ERRORS*)
+LINE: 765
+
+NORMAL SKEK
+MESSAGE: SKEK_DUMP_IN_CPU
+Skek->size:        0
+Skek->type_size:   4
+Skek->capacity:    16
+Skek->hash:                 0
+Skek->canary_front:         D0D0B00B5
+Skek->canary_behind:        D0D0B00B5
+Skek->canary_data_front:    D0D0B00B5
+Skek->canary_data_behind:   D0D0B00B5
+Skek->data:
+
+type of elements: Hex
+END SKEK
+END DUMB
+

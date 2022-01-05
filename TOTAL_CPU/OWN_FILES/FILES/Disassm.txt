@@ -1,0 +1,16 @@
+START FILE
+COMMANDS                  HEX_FORM
+PUSH 0                         030200000000
+POP KEK3                         040804
+IN KEK2                         050803
+CALL 22                         160416000000
+OUT KEK3                         060804
+END                         01
+KUNC                         17
+EKOMP KEK2 , KEK3                         0B4008030804
+LLEAP 56                         140438000000
+OUT KEK3                         060804
+PUSH 1 + KEK3                         032002010000000804
+POP KEK3                         040804
+LEAP 23                         130417000000
+EKUNC                         18
