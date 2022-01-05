@@ -6,11 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.cpp
-LibStack.h
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.h
+../../../Onegin/MyLibString.h
+time.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+assert.h
+-
+iostream
+-
+sys/stat.h
+-
+assert.h
+-
+math.h
+-
 
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Stack/LibStack.h
+../../../Stack/LibStack.h
 iostream
 -
 stdlib.h
@@ -24,5 +40,25 @@ limits.h
 time.h
 -
 map
+-
+
+../../LibKalikHelp/libHelpKalik.h
+cstdio
+-
+climits
+-
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.cpp
+LibProc.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.h
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/CPU/LibProc.h
+LibStack.h
+-
+MyLibString.h
+-
+libHelpKalik.h
+-
+ctime
 -
 

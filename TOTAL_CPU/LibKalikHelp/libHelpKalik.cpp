@@ -10,10 +10,17 @@ const int INFO_SIZE          = sizeof(int);
 
 const double CPU_ACCURACY        = 1e-10;
 
-const char* BIN_FILE_NAME     = "bin_file.txt";
-const char* PROGRAM_FILE_NAME = "prog.txt";
-const char* LOG_FILE_NAME     = "ASMLogFile.txt";
-const char* CPU_LOG_FILE_NAME = "CPULogFile.txt";
+const char* BIN_FILE_NAME       = "FILES/bin_file.txt";
+const char* PROGRAM_FILE_NAME   = "FILES/prog.txt";
+const char* CLEAN_PROGRAM_FILE_NAME = "FILES/clean_prog.txt";
+const char* DISASM_FILE_NAME    = "FILES/Disassm.txt";
+
+const char* ASM_LOG_FILE_NAME   = "ASM_FILES/ASMLogFile.txt";
+const char* ASM_SKEK_LOG_FILE_NAME = "ASM_FILES/SkekLogFile.txt";
+
+const char* CPU_LOG_FILE_NAME   = "CPU_FILES/CPULogFile.txt";
+const char* CPU_SKEK_LOG_FILE_NAME = "CPU_FILES/SkekLogFile.txt";
+
 
 const int MAX_INDENT          = 25;
 
@@ -107,3 +114,5 @@ bool bitcat(bit_str* bs1, bit_str* bs2) {
 
     return true;
 }
+
+

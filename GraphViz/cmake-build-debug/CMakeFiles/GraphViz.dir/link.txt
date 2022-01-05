@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/GraphViz.dir/main.cpp.o CMakeFiles/GraphViz.dir/KLibGraphV.cpp.o -o GraphViz 

@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/DIF.dir/DF_Source/KTree.cpp.o CMakeFiles/DIF.dir/DF_Source/KLexer.cpp.o CMakeFiles/DIF.dir/DF_Source/KDump.cpp.o CMakeFiles/DIF.dir/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/MyLibString.cpp.o -o DIF 

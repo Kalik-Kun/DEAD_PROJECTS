@@ -25,6 +25,7 @@ typedef double COMMON_ASM_TYPE;
 typedef char COMMON_ASM_TYPE;
 #endif
 
+
 #define SMALL_DUMP(error_text) \
 printf("\x1b[31mERROR\n"\
         "FILE: %s\n"\
@@ -52,90 +53,376 @@ printf("\x1b[31mERROR\n"\
     }
 
 #define CHECK_FOR_ERR(error, return_value) \
-    if(*(error) != UNDEFINED) return (return_value);
+    if(*(error) != UNDEFINED) return return_value;
 
 /// Processor commands
-/*
+/**
  * When you add command plese change:
- * ASM: ConvCom and ConInBin
- * DisASM:
- * CPU:
- */
+ * 1. Kalik pls think: are you needing this shit comand???
+ * 2. Write in ASM_COMMANDS these comand with comment
+ * 3. Add comand in these palce in code
+     * ASM: ConvCom (onlu cmp) and ConInBin (add name with define)
+     * DisASM: nahui u mena dump asemblere.... (CmdShow)
+     * CPU: CPUImplement (add comand and write recognize with implement) and
+ * 3. PLESE don't forgot comment
+ *
+ **/
+
 enum ASM_COMMANDS {
+
+    /// OWN ASM COMMANDS
+
     CMD_END = 1,    // END PROC (HAVE sizeof(char) bytes in memory)
     CMD_RESET,      // RESET SKEK (HAVE sizeof(char) bytes in memory)
 
+    /// INTERACTION WITH SKEK
+
     /* PUSH element in top skek
-    // (HAVE sizeof(char) + sizeof(char) +maybe(sizeof(char))+sizeof(COMMON_ASM_TYPE) bytes in memory)
-    // 1 byte - it's spec operation
-    * 2 byte - it desribe argument. USE: CONST_FLAG, REG_FLAG, REG_FLAG | CONST_FLAG ,TODO(MEM_FLAG)
-    // (3 byte mb) - if 2 byte -reg byte use these memory for decribe certain register
-    // 3(4) byte - it's data
-    // EXAMPLE:
-    // PUSH 10      - push 10 in top skek
-    // PUSH KEK1    - push register value in top skek
-    // PUSH KEK1 + 10 - push register value + 10 in skek
+    * (HAVE sizeof(char) + sizeof(char) + sizeof(data) bytes in memory)
+    * 1 byte - it's spec operation
+    * 2 byte - it desribe data
+    * 3 byte - it's data
+    * EXAMPLE:
+    * PUSH 10      - push 10 in top skek
+    * PUSH KEK1    - push register value in top skek
+    * PUSH KEK1 + 10 - push register value + 10 in skek
     */
     CMD_PUSH,
+
     /* POP element in top skek and assigns element(reg or ram)
-     * HAVE sizeof(char) + sizeof(char)
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
      * 1 byte - it's spec operation
-     * 2 byte - it desribe argument. USE: NO_FLAG, REG_FLAG, TODO(MEM_FLAG)
+     * 2 byte - it describe data
+     * 3 byte - it's data
      * EXAMPLE:
      * POP       - only delete  top elem in skek
      * POP KEK0  - delete elem in skek and assign register name
      * POP [10]  - delete elem in skek and assign memory
     */
     CMD_POP,
+
+    /// INTERACTION WITH USER
+
     /* input number (scanf) and put in top skek
-    // May be with register (IN or IN KEK0)
-    // (HAVE sizeof(char) + sizeof(char) + myabe(sizeof(char)))
-    // 1 byte - it's spec operation
-    * 2 byte - it desribe argument. USE: CONST_FLAG, REG_FLAG, TODO(MEM_FLAG)
-    // (3) byte - for name register if 2 byte allows
-    // EXAMPLE:
-    // IN
-    // IN KEK0
+    * May be with register and ram (IN or IN KEK0 or IN [10])
+    * (HAVE sizeof(char) + sizeof(char) + sizeof(data))
+    * 1 byte - it's spec operation
+    * 2 byte - it desribe data
+    * 3 byte - data (may be not exist)
+    * EXAMPLE:
+    * IN
+    * IN KEK0
     */
     CMD_IN,
-    // output top elem
-    // EXAMPLE:
-    // OUT
+
+    /* Output top elem or registers ot ram
+     * EXAMPLE:
+     * OUT      - print top elem in skek
+     * OUT KEK0 - print value register KEK)
+     * OUT [10] - print ram with 10 indentificator
+    */
     CMD_OUT,
+
+    /// MATH OPERATIONS
 
     // ADD top and top-1 elements (HAVE sizeof(char) bytes in memory)
     CMD_ADD,
+
     // subtract top and top-1 elements (HAVE sizeof(char) bytes in memory)
     CMD_SUB,
+
     // MULTIPLY top and top-1 elements
     CMD_MULT,
+
     // DIVIDE top and top-1 elements
     CMD_DIV,
-    // JUMP
+
+    /// KALIK COMPARES
+
+    /* EKOMP - EQUAL KALIK COMPARE.
+     * EKOMP - comapre 2 variable,
+     * if FIRST EQUAL SECOND that
+     * write in KALIK_LOGIC register 1 else write 0(default value).
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it discribe data ( MUST BE  ENUM_FLAG, else ERROR)
+     * 3 bite - data
+     *
+     * EXAMPLE:
+     * EKOMP 1, 2       - compare 1 and 2 (write in KALIK_LOGIC 0)
+     * EKOMP 2, 1       - compare 2 and 1 (write in KALIK_LOGIC 0)
+     * EKOMP 0, 0       - compare 0 and 0 (write in KALIK_LOGIC 1)
+     * EKOPM KEK0, KEK1 - compare KEK0 and KEK1
+     */
+    CMD_EKOMP,
+
+    /* NEKOMP - NOT EQUAL KALIK COMPARE.
+     * NEKOMP - comapre 2 variable,
+     * if FIRST NOT EQUAL SECOND that
+     * write in KALIK_LOGIC register 1 else write 0(default value).
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it discribe data ( MUST BE  ENUM_FLAG, else ERROR)
+     * 3 bite - data
+     *
+     * EXAMPLE:
+     * NEKOMP 1, 2       - compare 1 and 2 (write in KALIK_LOGIC 1)
+     * NEKOMP 2, 1       - compare 2 and 1 (write in KALIK_LOGIC 1)
+     * NEKOMP 0, 0       - compare 0 and 0 (write in KALIK_LOGIC 0)
+     * NEKOPM KEK0, KEK1 - compare KEK0 and KEK1
+     */
+    CMD_NEKOMP,
+
+    /* LKOMP - LESS KALIK COMPARE.
+     * LKOMP - comapre 2 value,
+     * if FIRST LESS than SECOND veriable that
+     * write in KALIK_LOGIC register 1 else write 0(default value).
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it discribe data ( MUST BE  ENUM_FLAG, else ERROR)
+     * 3 bite - data
+     *
+     * EXAMPLE:
+     * LKOMP 1, 2       - compare 1 and 2 (write in KALIK_LOGIC 1)
+     * LKOMP 2, 1       - compare 2 and 1 (write in KALIK_LOGIC 0)
+     * LKOMP 0, 0       - compare 0 and 0 (write in KALIK_LOGIC 0)
+     * LKOPM KEK0, KEK1 - compare KEK0 and KEK1
+     */
+    CMD_LKOMP,
+
+    /* NLKOMP - NOT LESS KALIK COMPARE.
+     * NLKOMP - comapre 2 value,
+     * if FIRST NOT LESS than SECOND veriable that
+     * write in KALIK_LOGIC register 1 else write 0(default value).
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it discribe data ( MUST BE  ENUM_FLAG, else ERROR)
+     * 3 bite - data
+enum Parametors
+{
+
+};
+     *
+     * EXAMPLE:
+     * NLKOMP 1, 2       - compare 1 and 2 (write in KALIK_LOGIC 0)
+     * NLKOMP 2, 1       - compare 2 and 1 (write in KALIK_LOGIC 1)
+     * NLKOMP 0, 0       - compare 0 and 0 (write in KALIK_LOGIC 1)
+     * NLKOPM KEK0, KEK1 - compare KEK0 and KEK1
+     */
+    CMD_NLKOMP,
+
+    /* ELKOMP - EQUAL or LESS KALIK COMPARE.
+     * ELKOMP - comapre 2 value,
+     * if FIRST EQUAL or LESS than SECOND veriable that
+     * write in KALIK_LOGIC register 1 else write 0(default value).
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it discribe data ( MUST BE  ENUM_FLAG, else ERROR)
+     * 3 bite - data
+     *
+     * EXAMPLE:
+     * ELKOMP 1, 2       - compare 1 and 2 (write in KALIK_LOGIC 1)
+     * ELKOMP 2, 1       - compare 2 and 1 (write in KALIK_LOGIC 0)
+     * ELKOMP 0, 0       - compare 0 and 0 (write in KALIK_LOGIC 1)
+     * ELKOPM KEK0, KEK1 - compare KEK0 and KEK1
+     */
+    CMD_ELKOMP,
+
+    /* MKOMP - MORE KALIK COMPARE.
+     * MKOMP - comapre 2 value,
+     * if first MORE than second veriable that
+     * write in KALIK_LOGIC register 1 else write 0(default value).
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it discribe data ( MUST BE  ENUM_FLAG, else ERROR)
+     * 3 bite - data
+     *
+     * EXAMPLE:
+     * MKOMP 1, 2       - compare 1 and 2 (write in KALIK_LOGIC 0)
+     * MKOMP 2, 1       - compare 2 and 1 (write in KALIK_LOGIC 1)
+     * MKOMP 0, 0       - compare 0 and 0 (write in KALIK_LOGIC 0)
+     * MKOPM KEK0, KEK1 - compare KEK0 and KEK1
+     */
+    CMD_MKOMP,
+
+    /* NMKOMP - NOT MORE KALIK COMPARE.
+     * NMKOMP - comapre 2 value,
+     * if first NOT MORE than second veriable that
+     * write in KALIK_LOGIC register 1 else write 0(default value).
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it discribe data ( MUST BE  ENUM_FLAG, else ERROR)
+     * 3 bite - data
+     *
+     * EXAMPLE:
+     * NMKOMP 1, 2       - compare 1 and 2 (write in KALIK_LOGIC 1)
+     * NMKOMP 2, 1       - compare 2 and 1 (write in KALIK_LOGIC 0)
+     * NMKOMP 0, 0       - compare 0 and 0 (write in KALIK_LOGIC 1)
+     * NMKOPM KEK0, KEK1 - compare KEK0 and KEK1
+     */
+    CMD_NMKOMP,
+
+    /* EMKOMP - EQUAL or MORE KALIK COMPARE.
+     * EMKOMP - comapre 2 value,
+     * if first EQUAL or MORE than second veriable that
+     * write in KALIK_LOGIC register 1 else write 0(default value).
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it discribe data ( MUST BE  ENUM_FLAG, else ERROR)
+     * 3 bite - data
+     *
+     * EXAMPLE:
+     * EMKOMP 1, 2       - compare 1 and 2 (write in KALIK_LOGIC 0)
+     * EMKOMP 2, 1       - compare 2 and 1 (write in KALIK_LOGIC 1)
+     * EMKOMP 0, 0       - compare 0 and 0 (write in KALIK_LOGIC 1)
+     * EMKOPM KEK0, KEK1 - compare KEK0 and KEK1
+     */
+    CMD_EMKOMP,
+
+    /// JUMPS
+
+    /* LEAP - jump on certain bit
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it desribe data (usually ENUM_FLAG)
+     *
+     * EXAMPLE:
+     * LEAP 5        - jump on 5 bit in code
+     * LEAP :KALIK   - jump on bit with value in this mark
+     * LEAP [:KLAIK] - jump on bit with value in this ram
+    */
     CMD_LEAP,
+
+    /* LLEAP(Logical leap) - jump on certain bit if KALIK_LOGIC == 1
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it desribe data (usually MARK_FLAG)
+     * 3 byte - data
+     *
+     * EXAMPLE:
+     * LLEAP 5        - jump on 5 bit in code
+     * LLEAP :KALIK   - jump on bit with value in this mark
+     * LLEAP [:KLAIK] - jump on bit with value in this ram
+    */
+    CMD_LLEAP,
+
+
+    /// FUN
+    /* FRIDAY_LEAP - jump on certain bit if today friday
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it desribe data (usually MARK_FLAG)
+     * 3 byte - data
+     *
+     * EXAMPLE:
+     * FRIDAY_LEAP 5        - jump on 5 bit in code
+     * FRIDAY_LEAP :KALIK   - jump on bit with value in this mark
+     * FRIDAY_LEAP [:KLAIK] - jump on bit with value in this ram
+    */
+    CMD_FRIDAY_LEAP,
+
+    /* CALL - it's function, work as LEAP but when function ending that return to call
+     * When CALL jump on function mark, program create in kfunc_stack position of CALL
+     * CALL (Mark)
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it desribe data (usually MARK_FLAG)
+     * 3 byte - data
+     *
+     * EXAMPLE:
+     * CALL :ANIME          - jump on Mark anime()
+    */
+    CMD_CALL,
+
+    /* KUNC - KALIK FUNCTION
+     * KUNC in ASEMBLER define new mark name (mark name is behind KNUC)
+     *      and write KUNC indeficator in bit_string
+     * KUNC in CPU return error if processor stopped at this command
+     *
+     * HAVE sizeof(char) + sizeof(char) + sizeof(data)
+     * 1 byte - it's spec operation
+     * 2 byte - it desribe data (usually MARK_FLAG)
+     * 3 byte - data
+     *
+     * EXAMPLE:
+     * :anime KUNC
+     * ...
+     * EKUNC
+    */
+    CMD_KUNC,
+
+
+    /* EKUNC - END KALIK FUNCTION
+     * EKUNC in ASSEMBLER do nothing only write command on bit code
+     * EKUNC - in CPU go to last mark in KUNC stack
+     *
+     * HAVE sizeof(char)
+     * 1 byte - it's spec operation
+     *
+     * EXAMPLE:
+     * KUNC :anime
+     * ...
+     * EKUNC
+    */
+    CMD_EKUNC,
 
     // UNDEFINED_SKEK
     CMD_UND = CHAR_MAX,
 };
 
+/// ASM FLAGS
+
+/**
+ * When you add flag plese change:
+ * 1. Kalik pls think: are you needing this shit flag???
+ * 1.5. KLAIK FLAG ISN'T A JOKE, THAT REAL SHIT, PLS THINK
+ * 2. Write in ASM_FLAGS these flag with comment(WITH COMMENT)
+ * 3. Write function like: NoFlag and you want thath these flag are using in all command,
+ * you need add these func in SeriesFlag
+ * 4. Add flag in these palce in code
+     * ASM: SeriesFlag and add these function
+     * DisASM: FlagShow
+     * CPU: FlagImpOut, FlagImpIn
+ * 5. PLESE don't forgot comment
+ *
+ **/
 enum ASM_FLAGS {
     // no flag after command
     NO_FLAG     = 1,
+
     // if command have const
     CONST_FLAG  = 2,
 
     MARK_FLAG   = 4,
     // reg flag after command (that mean next arg is name register)
+
     REG_FLAG    = 8,
+
     // if use RAM
     MEM_FLAG    = 16,
+
     // if use +
     PLUS_FLAG   = 32,
 
+    // if use , (enumerate data) EXAMPLE: EKOMP 1, 2
+    ENUM_FLAG   = 64,
 };
 
 
 enum CPU_REGISTERS {
+    REG_KALIK_LOGIC,
     REG_KEK0,
     REG_KEK1,
     REG_KEK2,
@@ -161,7 +448,10 @@ enum CPU_ERRORS {
     CPU_PLUS_IN_INPUT,
     CPU_MARK_IN_INPUT,
     CPU_CONST_IN_INPUT,
+    CPU_ERROR_IN_SKEK,
     CPU_REG_DOESNT_EXIST,
+    CPU_CALL_NO_FUNCTION,
+    CPU_FORBIDDEN_USAGE_ENUM,
 
     //ASM ERRORS
 
@@ -173,6 +463,10 @@ enum CPU_ERRORS {
     ASM_MARK_NAMES_SKEK_ERROR,
     ASM_ERROR_IN_SKEK,
     ASM_MARK_DONT_DEF,
+    ASM_WRONG_COMARE_FORMAT,
+    ASM_PLUS_WITHOUT_ARGUMENT,
+    ASM_EMUN_WITHOUT_ARGUMENT,
+    ASM_NOT_ALL_SYMB_RECOGNIZE,
 
     // OWN error
     UNDEFINED,              // UNDEFINED_SKEK error in proc
@@ -185,9 +479,10 @@ enum CPU_ERRORS {
 };
 
 /// bit_str - this bit string\n
-/// \param index_str - (long) number this string in array
-/// \param data    - (void*) pointer on data
-/// \param size    - (long) size this bit_string
+/// \param index_str - number this string in array (arr_bit_str)
+/// \param data    - pointer on data
+/// \param start_byte - bit(i know) where string brgin in (array) arr_bit_str
+/// \param size    - size this bit_string
 struct bit_str {
     void*     data          = nullptr;
     long long index_str     = 0;
@@ -203,6 +498,15 @@ struct arr_bit_str {
     long   size         = 0;
 };
 
+/// COMMON_ASM_PAIR - only pair for work
+/// \param first  - first number (COMMON_ASM_TYPE)
+/// \param second - second number  (COMMON_ASM_TYPE)
+struct COMMON_ASM_PAIR {
+    COMMON_ASM_TYPE first  = 0;
+    COMMON_ASM_TYPE second = 0;
+};
+
+
 /// errors var
 extern CPU_ERRORS CPU_ERR;
 extern CPU_ERRORS ASM_ERR;
@@ -215,8 +519,14 @@ extern const int INFO_SIZE;
 /// Filenames
 extern const char* BIN_FILE_NAME;
 extern const char* PROGRAM_FILE_NAME;
-extern const char* LOG_FILE_NAME;
+extern const char* CLEAN_PROGRAM_FILE_NAME;
+extern const char* DISASM_FILE_NAME;
+
+extern const char* ASM_LOG_FILE_NAME;
+extern const char* ASM_SKEK_LOG_FILE_NAME;
+
 extern const char* CPU_LOG_FILE_NAME;
+extern const char* CPU_SKEK_LOG_FILE_NAME;
 
 /// Indent in dump for output
 extern const int MAX_INDENT;
@@ -275,4 +585,6 @@ bool bit_comp(void* a, void* b, size_t size);
 const char* ConvReginStr(const char reg);
 
 bool bitcat(bit_str* bit_string1, bit_str* bit_string2);
+
+
 #endif //LIBKALIKHELP_LIBHELPKALIK_H

@@ -1,0 +1,7 @@
+CALL :anime
+OUT
+:suka
+END
+:anime KUNC
+PUSH 1
+EKUNC

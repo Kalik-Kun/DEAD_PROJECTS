@@ -30,18 +30,24 @@ FILE* open_file(const char *full_filename) {
 }
 
 
+
         /// WORK WITH ARRAY FUNCTION ///
 struct myarr file_reading(FILE* fp, const char* name_file) {
     long number_line = 0;
     struct mystr *arr_string = nullptr;
     char *buff = nullptr;
-    size_t size_file = out_file_size(name_file);
 
-    buff = (char*) calloc(size_file, sizeof(char));
-    fread(buff, sizeof(char), size_file, fp);
+    size_t size_file = out_file_size(name_file);
+    char *dirty_buff = (char*) calloc(size_file, sizeof(char));
+    fread(dirty_buff, sizeof(char), size_file, fp);
+
+    struct mystr new_buff = clean(dirty_buff, size_file);
+    free(dirty_buff);
+
+    buff = new_buff.str;
+    size_file = new_buff.len;
 
     size_t count_line = find_count_elems(buff, '\n') + 1;
-
 
     arr_string = (struct mystr *) calloc(count_line, sizeof(struct mystr));
 
@@ -685,7 +691,7 @@ void print_arr_left_to_right (struct mystr* arr, size_t left, size_t right) {
  * */
 
 void cleaning_file_and_record(const char *_name_input_file_, const char *_name_output_file) {
-    FILE* input_file = fopen(_name_input_file_, "r");
+    FILE* input_file  = fopen(_name_input_file_, "r");
     FILE* output_file = fopen(_name_output_file, "w");
     struct stat stat_file = {};
     char* buff = nullptr;
@@ -700,13 +706,12 @@ void cleaning_file_and_record(const char *_name_input_file_, const char *_name_o
 
     fwrite(new_buff.str, sizeof(char), new_buff.len, output_file);
 //    fprintf(output_file, "%s", new_buff);
-
     free(buff);
     free(new_buff.str);
 }
 
 struct mystr clean(const char* buff, const long buff_size) {
-    char* new_buff = (char*)calloc(buff_size, sizeof(char));
+    char* new_buff = (char*)calloc(buff_size + 1, sizeof(char));
     char Repeating_spaces     = false;
     char Repeating_enters     = false;
     size_t number_elem_new_buff = 0;     // number elem in new buff
@@ -722,10 +727,10 @@ struct mystr clean(const char* buff, const long buff_size) {
         }
         else Repeating_enters = false;
 
-        if (buff[i] == ' ' ||
+        if (buff[i] == ' '  ||
             buff[i] == '\t' ||
             !(33 <= buff[i] && buff[i] <= 126)) {
-
+            Repeating_enters = true;
             if (Repeating_spaces) continue;
             Repeating_spaces = true;
             new_buff[number_elem_new_buff++] = ' ';

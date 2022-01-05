@@ -1,0 +1,26 @@
+START DUMP
+COMMANDS                  BIT_FORM
+PUSH 0                    data[0] = 030200000000
+POP KEK3                  data[1] = 040804
+IN KEK2                   data[2] = 050803
+CALL :anime               data[3] = 160416000000
+OUT KEK3                  data[4] = 060804
+END                       data[5] = 01
+:anime KUNC               data[6] = 17
+:start                    data[7] = 
+EKOMP KEK2 , KEK3         data[8] = 0B4008030804
+LLEAP :end                data[9] = 140438000000
+OUT KEK3                  data[10] = 060804
+PUSH 1 + KEK3             data[11] = 032002010000000804
+POP KEK3                  data[12] = 040804
+LEAP :start               data[13] = 130417000000
+:end                      data[14] = 
+EKUNC                     data[15] = 18
+
+MARK BUFFER:
+NAME                      BYTE_POS
+:anime                    22
+:start                    23
+:end                      56
+
+END DUMP

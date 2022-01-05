@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/dif.dir/main.cpp.o CMakeFiles/dif.dir/KTree.cpp.o CMakeFiles/dif.dir/KLexer.cpp.o CMakeFiles/dif.dir/KDump.cpp.o -o dif 

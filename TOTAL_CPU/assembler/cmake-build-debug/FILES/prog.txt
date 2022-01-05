@@ -1,0 +1,11 @@
+CALL :anime
+PUSH 1
+OUT
+
+END
+
+
+
+              :anime KUNC
+PUSH 1
+EKUNC

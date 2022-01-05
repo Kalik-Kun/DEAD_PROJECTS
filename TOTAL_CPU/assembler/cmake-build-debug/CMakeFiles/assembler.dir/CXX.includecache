@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../../../Onegin/MyLibString.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/MyLibString.cpp
+MyLibString.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/MyLibString.h
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/Onegin/MyLibString.h
 time.h
 -
 stdio.h
@@ -24,39 +28,5 @@ sys/stat.h
 assert.h
 -
 math.h
--
-
-../../../Stack/LibStack.h
-iostream
--
-stdlib.h
--
-assert.h
--
-string.h
--
-limits.h
--
-time.h
--
-map
--
-
-../../LibKalikHelp/libHelpKalik.h
-cstdio
--
-climits
--
-
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/assembler/Assembler.cpp
-Assembler.h
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/assembler/Assembler.h
-
-/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/TOTAL_CPU/assembler/Assembler.h
-MyLibString.h
--
-libHelpKalik.h
--
-LibStack.h
 -
 

@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/KList.dir/main.cpp.o CMakeFiles/KList.dir/KList.cpp.o -o KList 

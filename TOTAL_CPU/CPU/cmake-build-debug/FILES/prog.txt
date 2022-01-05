@@ -1,0 +1,23 @@
+PUSH 0
+POP KEK3
+
+IN KEK2
+
+CALL :anime
+OUT KEK3
+END
+
+:anime KUNC
+
+:start
+EKOMP KEK2 , KEK3
+LLEAP :end
+
+OUT KEK3
+PUSH 1 + KEK3
+POP KEK3
+
+LEAP :start
+:end
+
+EKUNC

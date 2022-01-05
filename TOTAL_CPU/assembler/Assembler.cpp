@@ -5,14 +5,25 @@
 #include "Assembler.h"
 
 const int ASM_KEK_MARK_BUFF_SIZE = CHAR_MAX;
+const size_t CALL_MARK = -2;
 
+
+///table with mrk (MARK)
 mrk mark_table[ASM_KEK_MARK_BUFF_SIZE];
+
+/// consist of ptr_mrk
 Skek undef_mark_names = {};
 
+
+// todo goto in outs
 bool assembler(const char* program_file_name, const char* binfile_name,
                CPU_ERRORS* error) {
+
+    LOGFILE_NAME = ASM_SKEK_LOG_FILE_NAME;
+
     FILE* prog_file = openfile(program_file_name, "r", error);
     if (prog_file == nullptr) return false;
+
     FILE* bin_file  = openfile(binfile_name, "w", error);
     if (bin_file == nullptr) {
         fclose(bin_file);
@@ -25,7 +36,6 @@ bool assembler(const char* program_file_name, const char* binfile_name,
     myarr arr_string = file_reading(prog_file, program_file_name);
 
 //    print_array(&arr_string);
-
 
     // arr bit strings
     arr_bit_str arr_bit_string = {};
@@ -46,6 +56,8 @@ bool assembler(const char* program_file_name, const char* binfile_name,
     #endif
 
 
+
+
     size_t real_len_bit_string = 0;
 
     if (!SkekCtor(&undef_mark_names, sizeof(ptr_mrk))) {
@@ -53,19 +65,19 @@ bool assembler(const char* program_file_name, const char* binfile_name,
     }
 
     for (int i = 0; i < arr_string.size; i ++) {
-        if (arr_string.arr[i].len == 0) continue;
+        if (arr_string.arr[i].len == 0) {
+            printf("here");
+            continue;
+        }
         long len_com = 0;
 
         size_t num_space = find_count_elems(arr_string.arr[i].str, ' ') ;
 
-        size_t count_left_sqrt = find_count_elems(arr_string.arr[i].str, '[');
+        // check number brackets
+        size_t count_left_sqrt  = find_count_elems(arr_string.arr[i].str, '[');
         size_t count_right_sqrt = find_count_elems(arr_string.arr[i].str, ']');
         if (count_left_sqrt != count_right_sqrt) {
-            SkekDtor(&undef_mark_names);
-            free(arr_bit_string.arr);
-            free_memory_for_string_array(&arr_string);
-            fclose(prog_file);
-            fclose(bin_file);
+            CLEAN_MEM
             FUNC_ERROR(error, ASM_LACK_SQRT_BRACKET)
         }
 
@@ -73,11 +85,7 @@ bool assembler(const char* program_file_name, const char* binfile_name,
                                             count_left_sqrt  + 1 +
                                             count_right_sqrt + 1, sizeof(char*));
         if (command_arr == nullptr) {
-            SkekDtor(&undef_mark_names);
-            free(arr_bit_string.arr);
-            free_memory_for_string_array(&arr_string);
-            fclose(prog_file);
-            fclose(bin_file);
+            CLEAN_MEM
             FUNC_ERROR(error, NULLPTR_IN_CALLOC)
         }
 
@@ -86,12 +94,16 @@ bool assembler(const char* program_file_name, const char* binfile_name,
             arr_bit_string.arr[i].start_byte =
                 arr_bit_string.arr[i - 1].start_byte + arr_bit_string.arr[i - 1].size;
 
+
+
         char* ptr_on_str = arr_string.arr[i].str;
 //        printf("%zu %s\n", arr_string.arr[i].len, arr_string.arr[i].str);
-        while (*ptr_on_str == ' ') {
-            *ptr_on_str = '\0';
-            ptr_on_str += sizeof(char);
-        }
+
+        //clean
+//        while (*ptr_on_str == ' ') {
+//            *ptr_on_str = '\0';
+//            ptr_on_str += sizeof(char);
+//        }
 
         char* ptr_space = nullptr;
         char* ptr_lsqrt = nullptr;
@@ -170,12 +182,8 @@ bool assembler(const char* program_file_name, const char* binfile_name,
 #endif
 
 //        if (!ConvInBin(command_arr, &arr_bit_string.arr[i], error)) {
-//            SkekDtor(&undef_mark_names);
 //            free(command_arr);
-//            free(arr_bit_string.arr);
-//            free_memory_for_string_array(&arr_string);
-//            fclose(prog_file);
-//            fclose(bin_file);
+//            CLEAN_MEM
 //            return false;
 //
 //        }
@@ -184,16 +192,15 @@ bool assembler(const char* program_file_name, const char* binfile_name,
            real_len_bit_string++;
 //           write_byte_string(bin_file, &arr_bit_string.arr[i]);
         }
+       else {
+           // todo i know that have more coolest solution with dump
+           return false;
+       }
         free(command_arr);
     }
 
     if (!ReloadMarkName(&arr_bit_string, error)) {
-
-        SkekDtor(&undef_mark_names);
-        free(arr_bit_string.arr);
-        free_memory_for_string_array(&arr_string);
-        fclose(prog_file);
-        fclose(bin_file);
+        CLEAN_MEM
         return false;
     }
 
@@ -203,29 +210,25 @@ bool assembler(const char* program_file_name, const char* binfile_name,
     }
 
     #ifdef ASM_DEBUG
-        if (!ASMDump(deb_arr_str, &arr_bit_string, LOG_FILE_NAME, error)) {
+        if (!ASMDump(deb_arr_str, &arr_bit_string, ASM_LOG_FILE_NAME, error)) {
             *error = ASM_ERROR_IN_DUMP;
             SMALL_DUMP(ASM_ERROR_IN_DUMP);
 
-            SkekDtor(&undef_mark_names);
             free_memory_for_string_array(deb_arr_str);
             free(deb_arr_str);
-            free(arr_bit_string.arr);
-            free_memory_for_string_array(&arr_string);
-            fclose(prog_file);
-            fclose(bin_file);
+
+            CLEAN_MEM
             return false;
         }
         free_memory_for_string_array(deb_arr_str);
         free(deb_arr_str);
     #endif
 
-    SkekDtor(&undef_mark_names);
-    free(arr_bit_string.arr);
-    free_memory_for_string_array(&arr_string);
-    fclose(prog_file);
-    fclose(bin_file);
+    CLEAN_MEM
     return true;
+
+
+
 }
 
 bool ConvInBin(char** command_arr, bit_str* bit_string,
@@ -241,63 +244,29 @@ bool ConvInBin(char** command_arr, bit_str* bit_string,
     CPU_REGISTERS REG_NAME  = REG_UND;
 
     if (MarkFlag(bit_string, command_arr, size_com, &pos_com, error)){
+        SkekDump(&undef_mark_names, DEB_ELEM("hueta"));
+        if (command_arr[pos_com] != nullptr &&
+        ConvCom(command_arr[pos_com]) == CMD_KUNC) {
+            ALLOC_COM(CMD_KUNC)
+        }
         return true;
     }
-    else if (*error != UNDEFINED) {
-        return false;
-    }
+    CHECK_FOR_ERR(error, false)
 
 
     switch (command) {
 
         case CMD_PUSH:
-            // PUSH must have 2 arguments
-            if (command_arr[1] == nullptr) {
-                FUNC_ERROR(error, ASM_WRONG_FORMAT)
-            }
-
-            ALLOC_COM(CMD_PUSH)
-
-            // todo improve SeriesFlag
-            if (!SeriesFlag(bit_string, command_arr, size_com, &pos_com, error)) {
-                free(bit_string->data);
-                FUNC_ERROR(error, ASM_WRONG_FORMAT)
-            }
-
-            return true;
+            ASM_CMD_WITH_ARG(CMD_PUSH)
 
         case CMD_POP:
-            ALLOC_COM(CMD_POP)
-            if (NoFlag(bit_string, command_arr, size_com, &pos_com, error))     goto cmd_pop;
-            if (SeriesFlag(bit_string, command_arr, size_com, &pos_com, error)) goto cmd_pop;
-
-            free(bit_string->data);
-            FUNC_ERROR(error, ASM_WRONG_FORMAT)
-
-            cmd_pop: return true;
+            ASM_CMD(CMD_POP)
 
         case CMD_IN:
-
-            ALLOC_COM(CMD_IN)
-\
-            if (NoFlag(bit_string, command_arr, size_com, &pos_com, error))     goto cmd_in;
-            if (SeriesFlag(bit_string, command_arr, size_com, &pos_com, error)) goto cmd_in;
-
-            free(bit_string->data);
-            FUNC_ERROR(error, ASM_WRONG_FORMAT)
-
-            cmd_in: return true;
+            ASM_CMD(CMD_IN)
 
         case CMD_OUT:
-            // todo check 1 arg
-            ALLOC_COM(CMD_OUT)
-            if (NoFlag(bit_string, command_arr, size_com, &pos_com, error))     goto cmd_out;
-            if (SeriesFlag(bit_string, command_arr, size_com, &pos_com, error)) goto cmd_out;
-
-            free(bit_string->data);
-            FUNC_ERROR(error, ASM_WRONG_FORMAT)
-
-            cmd_out: return true;
+            ASM_CMD(CMD_OUT)
 
         case CMD_ADD:
             ALLOC_COM(CMD_ADD)
@@ -315,20 +284,43 @@ bool ConvInBin(char** command_arr, bit_str* bit_string,
             ALLOC_COM(CMD_DIV)
             return true;
 
+        case CMD_EKOMP:
+            ASM_KALIK_COMPARE(CMD_EKOMP)
+        case CMD_NEKOMP:
+            ASM_KALIK_COMPARE(CMD_NEKOMP)
+
+        case CMD_LKOMP:
+            ASM_KALIK_COMPARE(CMD_LKOMP)
+        case CMD_NLKOMP:
+            ASM_KALIK_COMPARE(CMD_NLKOMP)
+        case CMD_ELKOMP:
+            ASM_KALIK_COMPARE(CMD_ELKOMP)
+
+        case CMD_MKOMP:
+            ASM_KALIK_COMPARE(CMD_MKOMP)
+        case CMD_NMKOMP:
+            ASM_KALIK_COMPARE(CMD_NMKOMP)
+        case CMD_EMKOMP:
+            ASM_KALIK_COMPARE(CMD_EMKOMP)
+
         case CMD_LEAP:
-            if (command_arr[1] == nullptr) {
-                FUNC_ERROR(error, ASM_WRONG_FORMAT)
-            }
+            ASM_CMD_WITH_ARG(CMD_LEAP)
 
-            ALLOC_COM(CMD_LEAP)
+        case CMD_LLEAP:
+            ASM_CMD_WITH_ARG(CMD_LLEAP)
 
-            if (SeriesFlag(bit_string, command_arr, size_com, &pos_com, error)) goto cmd_leap;
+        case CMD_FRIDAY_LEAP:
+            ASM_CMD_WITH_ARG(CMD_FRIDAY_LEAP)
 
+        case CMD_CALL:
+            ASM_CMD_WITH_ARG(CMD_CALL)
 
-            free(bit_string->data);
-            FUNC_ERROR(error, ASM_WRONG_FORMAT);
+        case CMD_KUNC:
+            FUNC_ERROR(error, ASM_WRONG_FORMAT)
 
-            cmd_leap: return true;
+        case CMD_EKUNC:
+            ALLOC_COM(CMD_EKUNC)
+            return true;
 
         case CMD_RESET:
             ALLOC_COM(CMD_RESET)
@@ -346,22 +338,53 @@ bool ConvInBin(char** command_arr, bit_str* bit_string,
 }
 
 ASM_COMMANDS ConvCom (const char* string) {
-    //todo strncmp
-    if (strcmp(string, "PUSH")  == 0)   return CMD_PUSH;
-    if (strcmp(string, "POP")   == 0)   return CMD_POP;
-    if (strcmp(string, "IN")    == 0)   return CMD_IN;
-    if (strcmp(string, "OUT")   == 0)   return CMD_OUT;
-    if (strcmp(string, "ADD")   == 0)   return CMD_ADD;
-    if (strcmp(string, "SUB")   == 0)   return CMD_SUB;
-    if (strcmp(string, "MULT")  == 0)   return CMD_MULT;
-    if (strcmp(string, "DIV")   == 0)   return CMD_DIV;
-    if (strcmp(string, "LEAP")  == 0)   return CMD_LEAP;
-    if (strcmp(string, "RESET") == 0)   return CMD_RESET;
-    if (strcmp(string, "END")   == 0)   return CMD_END;
+    //todo def
+
+    // own asm commands
+    if (strcmp(string, "RESET")   == 0)   return CMD_RESET;
+    if (strcmp(string, "END")     == 0)   return CMD_END;
+
+    // interaction with skek
+    if (strcmp(string, "PUSH")    == 0)   return CMD_PUSH;
+    if (strcmp(string, "POP")     == 0)   return CMD_POP;
+
+    // interaction with user
+    if (strcmp(string, "IN")      == 0)   return CMD_IN;
+    if (strcmp(string, "OUT")     == 0)   return CMD_OUT;
+
+    // math operations
+    if (strcmp(string, "ADD")     == 0)   return CMD_ADD;
+    if (strcmp(string, "SUB")     == 0)   return CMD_SUB;
+    if (strcmp(string, "MULT")    == 0)   return CMD_MULT;
+    if (strcmp(string, "DIV")     == 0)   return CMD_DIV;
+
+    // KALIK compares
+    if (strcmp(string, "EKOMP")   == 0)   return CMD_EKOMP;
+    if (strcmp(string, "NEKOMP")  == 0)   return CMD_NEKOMP;
+    if (strcmp(string, "LKOMP")   == 0)   return CMD_LKOMP;
+    if (strcmp(string, "NLKOMP")  == 0)   return CMD_NLKOMP;
+    if (strcmp(string, "ELKOMP")  == 0)   return CMD_ELKOMP;
+    if (strcmp(string, "MKOMP")   == 0)   return CMD_MKOMP;
+    if (strcmp(string, "EMKOMP")  == 0)   return CMD_EMKOMP;
+    if (strcmp(string, "NMKOMP")  == 0)   return CMD_NMKOMP;
+
+    // jumps
+    if (strcmp(string, "LEAP")    == 0)   return CMD_LEAP;
+    if (strcmp(string, "LLEAP")   == 0)   return CMD_LLEAP;
+
+    if (strcmp(string, "CALL")  == 0)     return CMD_CALL;
+    if (strcmp(string, "KUNC")  == 0)     return CMD_KUNC;
+    if (strcmp(string, "EKUNC") == 0)     return CMD_EKUNC;
+
+    // fun
+    if (strcmp(string, "FRIDAY_LEAP") == 0) return CMD_FRIDAY_LEAP;
+
     return CMD_UND;
 }
 
 CPU_REGISTERS ConvReg(const char* string) {
+    //todo def
+    if (strcmp(string, "KALIK_LOGIC") == 0) return REG_KALIK_LOGIC;
     if (strcmp(string, "KEK0") == 0) return REG_KEK0;
     if (strcmp(string, "KEK1") == 0) return REG_KEK1;
     if (strcmp(string, "KEK2") == 0) return REG_KEK2;
@@ -379,9 +402,9 @@ bool ReloadMarkName(arr_bit_str* arrBitStr, CPU_ERRORS* error) {
         if (!SkekPop(&undef_mark_names, &loc)) {
             FUNC_ERROR(error, ASM_ERROR_IN_SKEK)
         }
-        if (loc.arr_index == -1 ||
+        if (loc.arr_index       == -1 ||
             loc.byte_pos_in_str == -1 ||
-            loc.pos_name == -1) {
+            loc.pos_name        == -1) {
             FUNC_ERROR(error, ASM_MARK_NAMES_SKEK_ERROR)
         }
 
@@ -402,25 +425,27 @@ bool ReloadMarkName(arr_bit_str* arrBitStr, CPU_ERRORS* error) {
 bool SeriesFlag (bit_str* bit_string, char** command_arr,
                  size_t size_com, size_t* pos_com,
                  CPU_ERRORS* errors) {
-
+    if (EnumFlag(bit_string, command_arr, size_com, pos_com, errors))   return true;
+    CHECK_FOR_ERR(errors, false)
     if (PlusFlag(bit_string, command_arr, size_com, pos_com, errors))   return true;
-    if (*errors != UNDEFINED) return false;
+    CHECK_FOR_ERR(errors, false)
     if (SqrtFlag(bit_string, command_arr, size_com, pos_com, errors))   return true;
-    if (*errors != UNDEFINED) return false;
+    CHECK_FOR_ERR(errors, false)
     if (MarkFlag(bit_string, command_arr, size_com, pos_com, errors))   return true;
-    if (*errors != UNDEFINED) return false;
+    CHECK_FOR_ERR(errors, false)
     if (ConstFlag(bit_string, command_arr, size_com, pos_com, errors))  return true;
-    if (*errors != UNDEFINED) return false;
+    CHECK_FOR_ERR(errors, false)
     if (RegFlag(bit_string, command_arr, size_com, pos_com, errors))    return true;
-    if (*errors != UNDEFINED) return false;
-    return false;
+    CHECK_FOR_ERR(errors, false)
+
+    FUNC_ERROR(errors, ASM_WRONG_FORMAT)
 }
 
 
 bool NoFlag     (bit_str* bit_string, char** command_arr,
                  size_t size_com, size_t* pos_com,
                  CPU_ERRORS* errors) {
-    printf("here\n");
+//    printf("here\n");
     if (command_arr[*pos_com] != nullptr) return false;
 
     long long old_size = bit_string->size;
@@ -435,8 +460,8 @@ bool NoFlag     (bit_str* bit_string, char** command_arr,
 #ifdef ASM_DEBUG
     printf("\nI am %s\n."
            "I Extension bit_string->data:\n"
-           "Old size: %ld\n"
-           "New size: %ld\n\n",
+           "Old size: %lld\n"
+           "New size: %lld\n\n",
            __PRETTY_FUNCTION__, old_size, new_size);
 #endif
 
@@ -452,6 +477,8 @@ bool MarkFlag  (bit_str* bit_string, char** command_arr,
     if (command_arr[*pos_com] == nullptr ||
         command_arr[*pos_com][0] != ':') return false;
 
+//    printf("%s\n", command_arr[0]);
+
     long long start_byte_pos = bit_string->size;
     long long end_byte_pos   = bit_string->size;
     if (start_byte_pos != 0) {
@@ -462,7 +489,6 @@ bool MarkFlag  (bit_str* bit_string, char** command_arr,
             FUNC_ERROR(errors, NULLPTR_IN_REALLOC)
         }
     }
-
 
 #ifdef ASM_DEBUG
     printf("\nI am %s\n."
@@ -477,7 +503,6 @@ bool MarkFlag  (bit_str* bit_string, char** command_arr,
     while (mark_table[i].name != nullptr) {
         if (strcmp(mark_table[i].name, command_arr[*pos_com]) == 0) {
             if (start_byte_pos == 0 && mark_table[i].byte_pos == -1) {
-
                 mark_table[i].byte_pos = bit_string->start_byte;
 
 #ifdef ASM_MARK_DEBUG
@@ -489,6 +514,7 @@ bool MarkFlag  (bit_str* bit_string, char** command_arr,
 
                 bit_string->size = end_byte_pos;
                 (*pos_com) ++;
+
                 return true;
             }
 
@@ -651,18 +677,32 @@ bool PlusFlag   (bit_str* bit_string, char** command_arr,
                  CPU_ERRORS* errors) {
 
 //    printf("plus: %s %s %s\n", command_arr[*pos_com], command_arr[*pos_com + 1], command_arr[*pos_com + 2]);
-    if (*pos_com + 2 > size_com) return false;
+    bool flag_plus_exist = false;
+    if (command_arr[*pos_com + 1] != nullptr && strcmp(command_arr[*pos_com + 1], "+") == 0)
+        flag_plus_exist = true;
 
-    if (command_arr[*pos_com] == nullptr     ||
+    if (*pos_com + 2 > size_com) {
+        if (!flag_plus_exist) return false;
+        FUNC_ERROR(errors, ASM_PLUS_WITHOUT_ARGUMENT)
+    }
+
+    if (command_arr[*pos_com]     == nullptr ||
         command_arr[*pos_com + 1] == nullptr ||
-        command_arr[*pos_com + 2] == nullptr) return false;
+        command_arr[*pos_com + 2] == nullptr) {
+
+        if (!flag_plus_exist) return false;
+        FUNC_ERROR(errors, ASM_PLUS_WITHOUT_ARGUMENT)
+    }
 
     // if left number is sqrt
     if (strcmp(command_arr[*pos_com], "[") == 0) {
+
         bool flag = false;
         size_t i = *pos_com;
         long numb_sqrt = 0;
+
         while (i < size_com) {
+            if (command_arr[i] == nullptr) return false;
 //            printf("circle: %ld %ld %s\n", i, size_com, command_arr[i]);
             if (strcmp(command_arr[i], "[") == 0) numb_sqrt ++;
             if (strcmp(command_arr[i], "]") == 0) {
@@ -707,15 +747,107 @@ bool PlusFlag   (bit_str* bit_string, char** command_arr,
     bit_string->size = new_size;
 
     if (SqrtFlag(bit_string,  command_arr, size_com, pos_com, errors))   goto next;
+    CHECK_FOR_ERR(errors, false)
     if (MarkFlag(bit_string,  command_arr, size_com, pos_com, errors))   goto next;
+    CHECK_FOR_ERR(errors, false)
     if (ConstFlag(bit_string, command_arr, size_com, pos_com, errors))   goto next;
+    CHECK_FOR_ERR(errors, false)
     if (RegFlag(bit_string,   command_arr, size_com, pos_com, errors))   goto next;
+    CHECK_FOR_ERR(errors, false)
     FUNC_ERROR(errors, ASM_WRONG_FORMAT)
 
     next: *pos_com += 1;
 
     if (!SeriesFlag(bit_string, command_arr, size_com, pos_com, errors)) {
-        FUNC_ERROR(errors, ASM_WRONG_FORMAT)
+        if (*errors != UNDEFINED) return false;
+        else {
+            FUNC_ERROR(errors, ASM_WRONG_FORMAT)
+        }
+    }
+
+    return true;
+}
+
+bool EnumFlag   (bit_str* bit_string, char** command_arr,
+                 size_t size_com, size_t* pos_com,
+                 CPU_ERRORS* errors) {
+
+//    printf("plus: %s %s %s\n", command_arr[*pos_com], command_arr[*pos_com + 1], command_arr[*pos_com + 2]);
+    if (*pos_com + 2 > size_com) return false;
+
+    if (command_arr[*pos_com] == nullptr     ||
+        command_arr[*pos_com + 1] == nullptr ||
+        command_arr[*pos_com + 2] == nullptr) return false;
+
+    // if left number is sqrt
+    if (strcmp(command_arr[*pos_com], "[") == 0) {
+        bool flag = false;
+        size_t i = *pos_com;
+        long numb_sqrt = 0;
+        while (i < size_com) {
+            if (command_arr[i] == nullptr) return false;
+//            printf("circle: %ld %ld %s\n", i, size_com, command_arr[i]);
+            if (strcmp(command_arr[i], "[") == 0) numb_sqrt ++;
+            if (strcmp(command_arr[i], "]") == 0) {
+//                printf("    circle: %ld %ld %s\n", i, size_com, command_arr[i]);
+                numb_sqrt--;
+                if (numb_sqrt == 0) {
+                    flag = true;
+                    break;
+                }
+            }
+            i++;
+        }
+
+        if (flag && command_arr[i + 1] == nullptr)        return false;
+        if (flag && strcmp(command_arr[i + 1], ",") != 0) return false;
+    }
+    else if (strcmp(command_arr[*pos_com + 1], ",") != 0) return false;
+
+    long long old_size = bit_string->size;
+    long long new_size = bit_string->size + sizeof(char);
+
+//    for (int i = 0; i < bit_string->size; i++) {
+//        printf("%02X", *((char*)bit_string->data + i));
+//    }
+//    printf("\n");
+
+    bit_string->data = realloc(bit_string->data,
+                               new_size);
+    if (bit_string->data == nullptr) {
+        FUNC_ERROR(errors, NULLPTR_IN_REALLOC)
+    }
+
+#ifdef ASM_DEBUG
+    printf("\nI am %s\n."
+           "I Extension bit_string->data:\n"
+           "Old size: %lld\n"
+           "New size: %lld\n\n",
+           __PRETTY_FUNCTION__, old_size, new_size);
+#endif
+
+    *(char*)((char*)bit_string->data + old_size) = ENUM_FLAG;
+    bit_string->size = new_size;
+
+    if (PlusFlag(bit_string,  command_arr, size_com, pos_com, errors))   goto next;
+    CHECK_FOR_ERR(errors, false)
+    if (SqrtFlag(bit_string,  command_arr, size_com, pos_com, errors))   goto next;
+    CHECK_FOR_ERR(errors, false)
+    if (MarkFlag(bit_string,  command_arr, size_com, pos_com, errors))   goto next;
+    CHECK_FOR_ERR(errors, false)
+    if (ConstFlag(bit_string, command_arr, size_com, pos_com, errors))   goto next;
+    CHECK_FOR_ERR(errors, false)
+    if (RegFlag(bit_string,   command_arr, size_com, pos_com, errors))   goto next;
+    CHECK_FOR_ERR(errors, false)
+    FUNC_ERROR(errors, ASM_WRONG_FORMAT)
+
+    next: *pos_com += 1;
+
+    if (!SeriesFlag(bit_string, command_arr, size_com, pos_com, errors)) {
+        if (*errors != UNDEFINED) return false;
+        else {
+            FUNC_ERROR(errors, ASM_WRONG_FORMAT)
+        }
     }
 
     return true;
@@ -839,5 +971,3 @@ bool MarkDump(FILE* logfile) {
 
     return true;
 }
-
-

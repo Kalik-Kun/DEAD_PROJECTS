@@ -105,9 +105,53 @@ bool CmdShow(void* buffer, size_t* numb_byte, FILE* prog_file, CPU_ERRORS* error
             PRINT_COM(DIV)
             return true;
 
+        case CMD_EKOMP:
+            PRINT_COM_WITH_FLAGS(EKOMP)
+            return true;
+        case CMD_NEKOMP:
+            PRINT_COM_WITH_FLAGS(NEKOMP)
+            return true;
+
+        case CMD_LKOMP:
+            PRINT_COM_WITH_FLAGS(LKOMP)
+            return true;
+        case CMD_NLKOMP:
+            PRINT_COM_WITH_FLAGS(NLKOMP)
+            return true;
+        case CMD_ELKOMP:
+            PRINT_COM_WITH_FLAGS(ELKOMP)
+            return true;
+
+        case CMD_MKOMP:
+            PRINT_COM_WITH_FLAGS(MKOMP)
+            return true;
+        case CMD_NMKOMP:
+            PRINT_COM_WITH_FLAGS(NMKOMP)
+            return true;
+        case CMD_EMKOMP:
+            PRINT_COM_WITH_FLAGS(EMKOMP)
+            return true;
+
         case CMD_LEAP:
             PRINT_COM_WITH_FLAGS(LEAP)
+            return true;
 
+        case CMD_LLEAP:
+            PRINT_COM_WITH_FLAGS(LLEAP)
+            return true;
+
+        case CMD_FRIDAY_LEAP:
+            PRINT_COM_WITH_FLAGS(FRIDAY_LEAP)
+            return true;
+
+        case CMD_CALL:
+            PRINT_COM_WITH_FLAGS(CALL)
+            return true;
+        case CMD_KUNC:
+            PRINT_COM(KUNC)
+            return true;
+        case CMD_EKUNC:
+            PRINT_COM(EKUNC)
             return true;
 
         case CMD_RESET:
@@ -154,6 +198,9 @@ bool FlagShow(void* buffer,
 
         case PLUS_FLAG:
             return PlusShow(buffer, numb_byte, prog_file, error);
+
+        case ENUM_FLAG:
+            return EnumShow(buffer, numb_byte, prog_file, error);
 
     }
 
@@ -234,6 +281,21 @@ bool SqrtShow(void* buffer,
     if (!FlagShow(buffer, numb_byte, prog_file, error)) return false;
     fprintf(prog_file, "]");
 
+
+    return true;
+}
+
+bool EnumShow (void* buffer,
+             size_t* numb_byte, FILE* prog_file,
+             CPU_ERRORS* error) {
+
+
+    if (*(char*)((char*)buffer + *numb_byte) != ENUM_FLAG) return false;
+
+    *numb_byte += sizeof(char);
+    if (!FlagShow(buffer, numb_byte, prog_file, error)) return false;
+    fprintf(prog_file, " , ");
+    if (!FlagShow(buffer, numb_byte, prog_file, error)) return false;
 
     return true;
 }

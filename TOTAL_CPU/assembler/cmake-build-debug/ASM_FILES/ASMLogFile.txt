@@ -1,0 +1,15 @@
+START DUMP
+COMMANDS                  BIT_FORM
+CALL :anime               data[0] = 16040F000000
+PUSH 1                    data[1] = 030201000000
+OUT                       data[2] = 0601
+END                       data[3] = 01
+:anime KUNC               data[4] = 17
+PUSH 1                    data[5] = 030201000000
+EKUNC                     data[6] = 18
+
+MARK BUFFER:
+NAME                      BYTE_POS
+:anime                    15
+
+END DUMP

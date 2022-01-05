@@ -124,5 +124,8 @@ bool SqrtShow(void* buffer,
                size_t* numb_byte, FILE* prog_file = nullptr,
                CPU_ERRORS* error = &CPU_ERR);
 
+bool EnumShow (void* buffer,
+                         size_t* numb_byte, FILE* prog_file = nullptr,
+                         CPU_ERRORS* error = &CPU_ERR);
 
 #endif //DISASSEMBLER_DISASSEMBLER_H
