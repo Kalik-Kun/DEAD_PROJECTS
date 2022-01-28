@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/KList/KList.h
+climits
+-
+stdlib.h
+-
+iostream
+-
+time.h
+-
+cstring
+-
+KList_impl.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/KList/KList_impl.h
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/KList/KList_impl.h
+
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/KList/main.cpp
+iostream
+-
+KList.h
+/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/KList/KList.h
+

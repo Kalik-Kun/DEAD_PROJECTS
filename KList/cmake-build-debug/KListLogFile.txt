@@ -1,0 +1,146 @@
+
+TIME : Fri Jan 28 22:05:19 2022
+START DUMP
+LAUNCHED FROM:
+FILE: /home/arlik_null/Документы/GitHub/DEAD_PROJECTS/KList/main.cpp
+FUNC: int main()
+LINE: 16
+MESSAGE: hue
+NORMAL SKEK
+KList::buffer_size:     127
+KList::size:            6
+KList::tale:            0
+KList::head:            1
+KList::free_ptr:        6
+KList:buffer:
+buffer[0]: 1  ->  2  ->  3
+buffer[1]: 5  ->  100  ->  0
+buffer[2]: 3  ->  4  ->  4
+buffer[3]: 0  ->  3  ->  2
+buffer[4]: 2  ->  -111  ->  5
+buffer[5]: 4  ->  -100  ->  1
+buffer[6]: -1  ->  17  ->  7
+buffer[7]: -1  ->  17  ->  8
+buffer[8]: -1  ->  17  ->  9
+buffer[9]: -1  ->  17  ->  10
+buffer[10]: -1  ->  17  ->  11
+buffer[11]: -1  ->  17  ->  12
+buffer[12]: -1  ->  17  ->  13
+buffer[13]: -1  ->  17  ->  14
+buffer[14]: -1  ->  17  ->  15
+buffer[15]: -1  ->  17  ->  16
+buffer[16]: -1  ->  17  ->  17
+buffer[17]: -1  ->  17  ->  18
+buffer[18]: -1  ->  17  ->  19
+buffer[19]: -1  ->  17  ->  20
+buffer[20]: -1  ->  17  ->  21
+buffer[21]: -1  ->  17  ->  22
+buffer[22]: -1  ->  17  ->  23
+buffer[23]: -1  ->  17  ->  24
+buffer[24]: -1  ->  17  ->  25
+buffer[25]: -1  ->  17  ->  26
+buffer[26]: -1  ->  17  ->  27
+buffer[27]: -1  ->  17  ->  28
+buffer[28]: -1  ->  17  ->  29
+buffer[29]: -1  ->  17  ->  30
+buffer[30]: -1  ->  17  ->  31
+buffer[31]: -1  ->  17  ->  32
+buffer[32]: -1  ->  17  ->  33
+buffer[33]: -1  ->  17  ->  34
+buffer[34]: -1  ->  17  ->  35
+buffer[35]: -1  ->  17  ->  36
+buffer[36]: -1  ->  17  ->  37
+buffer[37]: -1  ->  17  ->  38
+buffer[38]: -1  ->  17  ->  39
+buffer[39]: -1  ->  17  ->  40
+buffer[40]: -1  ->  17  ->  41
+buffer[41]: -1  ->  17  ->  42
+buffer[42]: -1  ->  17  ->  43
+buffer[43]: -1  ->  17  ->  44
+buffer[44]: -1  ->  17  ->  45
+buffer[45]: -1  ->  17  ->  46
+buffer[46]: -1  ->  17  ->  47
+buffer[47]: -1  ->  17  ->  48
+buffer[48]: -1  ->  17  ->  49
+buffer[49]: -1  ->  17  ->  50
+buffer[50]: -1  ->  17  ->  51
+buffer[51]: -1  ->  17  ->  52
+buffer[52]: -1  ->  17  ->  53
+buffer[53]: -1  ->  17  ->  54
+buffer[54]: -1  ->  17  ->  55
+buffer[55]: -1  ->  17  ->  56
+buffer[56]: -1  ->  17  ->  57
+buffer[57]: -1  ->  17  ->  58
+buffer[58]: -1  ->  17  ->  59
+buffer[59]: -1  ->  17  ->  60
+buffer[60]: -1  ->  17  ->  61
+buffer[61]: -1  ->  17  ->  62
+buffer[62]: -1  ->  17  ->  63
+buffer[63]: -1  ->  17  ->  64
+buffer[64]: -1  ->  17  ->  65
+buffer[65]: -1  ->  17  ->  66
+buffer[66]: -1  ->  17  ->  67
+buffer[67]: -1  ->  17  ->  68
+buffer[68]: -1  ->  17  ->  69
+buffer[69]: -1  ->  17  ->  70
+buffer[70]: -1  ->  17  ->  71
+buffer[71]: -1  ->  17  ->  72
+buffer[72]: -1  ->  17  ->  73
+buffer[73]: -1  ->  17  ->  74
+buffer[74]: -1  ->  17  ->  75
+buffer[75]: -1  ->  17  ->  76
+buffer[76]: -1  ->  17  ->  77
+buffer[77]: -1  ->  17  ->  78
+buffer[78]: -1  ->  17  ->  79
+buffer[79]: -1  ->  17  ->  80
+buffer[80]: -1  ->  17  ->  81
+buffer[81]: -1  ->  17  ->  82
+buffer[82]: -1  ->  17  ->  83
+buffer[83]: -1  ->  17  ->  84
+buffer[84]: -1  ->  17  ->  85
+buffer[85]: -1  ->  17  ->  86
+buffer[86]: -1  ->  17  ->  87
+buffer[87]: -1  ->  17  ->  88
+buffer[88]: -1  ->  17  ->  89
+buffer[89]: -1  ->  17  ->  90
+buffer[90]: -1  ->  17  ->  91
+buffer[91]: -1  ->  17  ->  92
+buffer[92]: -1  ->  17  ->  93
+buffer[93]: -1  ->  17  ->  94
+buffer[94]: -1  ->  17  ->  95
+buffer[95]: -1  ->  17  ->  96
+buffer[96]: -1  ->  17  ->  97
+buffer[97]: -1  ->  17  ->  98
+buffer[98]: -1  ->  17  ->  99
+buffer[99]: -1  ->  17  ->  100
+buffer[100]: -1  ->  17  ->  101
+buffer[101]: -1  ->  17  ->  102
+buffer[102]: -1  ->  17  ->  103
+buffer[103]: -1  ->  17  ->  104
+buffer[104]: -1  ->  17  ->  105
+buffer[105]: -1  ->  17  ->  106
+buffer[106]: -1  ->  17  ->  107
+buffer[107]: -1  ->  17  ->  108
+buffer[108]: -1  ->  17  ->  109
+buffer[109]: -1  ->  17  ->  110
+buffer[110]: -1  ->  17  ->  111
+buffer[111]: -1  ->  17  ->  112
+buffer[112]: -1  ->  17  ->  113
+buffer[113]: -1  ->  17  ->  114
+buffer[114]: -1  ->  17  ->  115
+buffer[115]: -1  ->  17  ->  116
+buffer[116]: -1  ->  17  ->  117
+buffer[117]: -1  ->  17  ->  118
+buffer[118]: -1  ->  17  ->  119
+buffer[119]: -1  ->  17  ->  120
+buffer[120]: -1  ->  17  ->  121
+buffer[121]: -1  ->  17  ->  122
+buffer[122]: -1  ->  17  ->  123
+buffer[123]: -1  ->  17  ->  124
+buffer[124]: -1  ->  17  ->  125
+buffer[125]: -1  ->  17  ->  126
+buffer[126]: -1  ->  0  ->  127
+
+END ERROR KLIST
+END DUMP
+

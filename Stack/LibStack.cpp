@@ -495,7 +495,7 @@ char SkekDump (struct Skek * my_skek, struct debug_elements debElem,
 
     if (*error != UNDEFINED_SKEK) {
         fprintf(file,"!!!!ERROR SKEK!!!!\n"
-                     "SKEK ERROR NUMBER: %d\n"
+                     "SKEK ERROR NU MBER: %d\n"
                      "That's mean: %s\n\n",
                *error, debElem.ERROR_MESSAGE);
     }
@@ -511,13 +511,13 @@ char SkekDump (struct Skek * my_skek, struct debug_elements debElem,
     }
     else {
         const char* type_elem = file_print_void_arr(file, my_skek->data, PRINT_TYPE,
-                                              my_skek->size, my_skek->type_size);
+                                                  my_skek->size, my_skek->type_size);
 
         fprintf(file, "\ntype of elements: %s\n", type_elem);
     }
 
     if (*error != UNDEFINED_SKEK) fprintf(file, "END ERROR SKEK\n");
-    else                     fprintf(file, "END SKEK\n");
+    else                          fprintf(file, "END SKEK\n");
 
     fprintf (file, "END DUMB\n\n");
 

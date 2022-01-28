@@ -88,6 +88,9 @@
 		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/KList/KList.h">
 			<Option target="KList"/>
 		</Unit>
+		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/KList/KList_impl.h">
+			<Option target="KList"/>
+		</Unit>
 		<Unit filename="/home/arlik_null/Документы/GitHub/DEAD_PROJECTS/KList/main.cpp">
 			<Option target="KList"/>
 		</Unit>
