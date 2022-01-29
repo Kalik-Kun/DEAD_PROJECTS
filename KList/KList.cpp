@@ -14,7 +14,7 @@ const KL_SIZE_TYPE KL_START_SIZE       = -57;
 
 const char* KL_LOGFILE_NAME       = "KListLogFile.txt";
 const char* KL_GRAPHVIZFILE_NAME  = "KListGraphVizFile.txt";
-const char* KL_PNG_NAME           = "KListViz.txt";
+const char* KL_PNG_NAME           = "KListViz.png";
 
 
 template<>

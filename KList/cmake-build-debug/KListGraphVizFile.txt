@@ -1,0 +1,15 @@
+digraph List {
+rankdir=TB;
+BUFF0 [shape=record, label=" {<left0> LEFT 1 | {<buff0> BUFF 0 | <val0> VAL 2} | <right0> RIGHT 3}" ];
+BUFF3 [shape=record, label=" {<left3> LEFT 0 | {<buff3> BUFF 3 | <val3> VAL 3} | <right3> RIGHT 2}" ];
+BUFF2 [shape=record, label=" {<left2> LEFT 3 | {<buff2> BUFF 2 | <val2> VAL 4} | <right2> RIGHT 4}" ];
+BUFF4 [shape=record, label=" {<left4> LEFT 2 | {<buff4> BUFF 4 | <val4> VAL -111} | <right4> RIGHT 5}" ];
+BUFF5 [shape=record, label=" {<left5> LEFT 4 | {<buff5> BUFF 5 | <val5> VAL -100} | <right5> RIGHT 1}" ];
+BUFF1 [shape=record, label=" {<left1> LEFT 5 | {<buff1> BUFF 1 | <val1> VAL 100} | <right1> RIGHT 0}" ];
+BUFF0:<right0> -> BUFF3:<left3>;
+BUFF3:<right3> -> BUFF2:<left2>;
+BUFF2:<right2> -> BUFF4:<left4>;
+BUFF4:<right4> -> BUFF5:<left5>;
+BUFF5:<right5> -> BUFF1:<left1>;
+BUFF1:<right1> -> BUFF0:<left0>;
+}

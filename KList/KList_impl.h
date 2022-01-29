@@ -536,5 +536,87 @@ void KList<KL_TYPE>::file_print_buffer(FILE* file) {
 }
 
 
+template<typename KL_TYPE>
+bool KList<KL_TYPE>::GDump(const char* tittle, const char* filename, const char* pngfilename, size_t mode) {
+    FILE* file = fopen(filename, "w");
+
+    fprintf(file, "digraph List {\n");
+    fprintf(file, "rankdir=TB;\n");
+    /// Use your code therese
+
+    for (KL_SIZE_TYPE ptr  = this->tale;
+         ptr != this->head;
+         ptr  = this->buffer[ptr].rp) {
+        //todo
+        fprintf(file, "BUFF%d "
+                      "[shape=record, label=\" "
+                      "{<left%d> LEFT %d | {<buff%d> BUFF %d | <val%d> VAL %d} | <right%d> RIGHT %d}\" "
+                      "];\n",
+                ptr,
+                ptr, this->buffer[ptr].lp,
+                ptr, ptr, ptr, this->buffer[ptr].val,
+                ptr, this->buffer[ptr].rp);
+    }
+    KL_SIZE_TYPE ptr = this->head;
+    fprintf(file, "BUFF%d "
+                  "[shape=record, label=\" "
+                  "{<left%d> LEFT %d | {<buff%d> BUFF %d | <val%d> VAL %d} | <right%d> RIGHT %d}\" "
+                  "];\n",
+            ptr,
+            ptr, this->buffer[ptr].lp,
+            ptr, ptr, ptr, this->buffer[ptr].val,
+            ptr, this->buffer[ptr].rp);
+
+    for (ptr  = this->tale;
+         ptr != this->head;
+         ptr  = this->buffer[ptr].rp) {
+        KL_SIZE_TYPE new_ptr = this->buffer[ptr].rp;
+        fprintf(file, "BUFF%d:<right%d> -> BUFF%d:<left%d>;\n",
+                ptr, ptr, new_ptr, new_ptr);
+    }
+    ptr = this->head;
+    KL_SIZE_TYPE  new_ptr = this->buffer[ptr].rp;
+    fprintf(file, "BUFF%d:<right%d> -> BUFF%d:<left%d>;\n",
+            ptr, ptr, new_ptr, new_ptr);
+
+    /// end you code there
+    fprintf(file, "}");
+
+    size_t cmd_size = strlen("dot -Tpng ") +
+                      strlen(filename) + strlen(" -o ") + strlen(pngfilename) + 1;
+    char* cmd = (char*)calloc(cmd_size, sizeof(char));
+
+    strcpy(cmd, "dot -Tpng ");
+    strcat(cmd, filename);
+    strcat(cmd, " -o ");
+    strcat(cmd, pngfilename);
+    printf("%s\n", cmd);
+    int result = system(cmd);
+    printf("%d\n", result);
+
+    if ((mode / DELETE_TXT) % 10 == 1) {
+        strcpy(cmd, "rm ");
+        strcat(cmd, filename);
+        result = system(cmd);
+    }
+
+    if ((mode / SHOW) % 10 == 1) {
+        strcpy(cmd, "eog ");
+        strcat(cmd, pngfilename);
+        result = system(cmd);
+        printf("%d\n", result);
+    }
+
+    if ((mode / DELETE_PNG) % 10 == 1) {
+        strcpy(cmd, "rm ");
+        strcat(cmd, pngfilename);
+        result = system(cmd);
+    }
+
+    free(cmd);
+    fclose (file);
+    return true;
+}
+
 
 #endif //KLIST_KLIST_IMPL_H

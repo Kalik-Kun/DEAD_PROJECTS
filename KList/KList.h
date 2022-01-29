@@ -187,7 +187,18 @@ public:
     void        set_logfile_name(const char* name);
 
     void print_elems();
+
+    enum KL_Modes
+    {
+        DEFAULT     = 10,
+        SHOW        = 100,
+        DELETE_PNG  = 1000,
+        DELETE_TXT  = 10000,
+    };
+
+    bool GDump(const char* tittle, const char* filename, const char* pngfilename, size_t mode = DEFAULT);
 };
+
 
 #include "KList_impl.h"
 

@@ -13,6 +13,7 @@ int main() {
     a.KLDelete(0);
     a.KLPushEnd(2);
     a.print_elems();
+    a.GDump("KList" ,KL_GRAPHVIZFILE_NAME, KL_PNG_NAME);
     a.KLDump(KL_DEB_ELEM("hue"));
     return 0;
 }
